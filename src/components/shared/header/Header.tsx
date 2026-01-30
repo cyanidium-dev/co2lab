@@ -1,3 +1,12 @@
+import Container from "../container/Container";
+import LogoLink from "../logoLink/LogoLink";
+
 export default function Header() {
-  return <header>header</header>;
+  return (
+    <header>
+      <Container>
+        <LogoLink />
+      </Container>
+    </header>
+  );
 }
