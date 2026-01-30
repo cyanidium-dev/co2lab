@@ -1,49 +1,138 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
+import ChevronIcon from "@/components/icons/ChevronIcon";
+
 type NavSubmenuItem = {
-    title: string;
-    slug: string;
+  title: string;
+  slug: string;
 };
 
 type NavMenuItem = {
-    title: string;
-    slug?: string;
-    submenu?: NavSubmenuItem[];
+  title: string;
+  slug?: string;
+  submenu?: NavSubmenuItem[];
 };
 
 const navMenuList: NavMenuItem[] = [
-    { title: "Home", slug: "/" },
-    { title: "Supply", slug: "/supply" },
-    {
-        title: "Solutions",
-        submenu: [
-            {
-                title: "Engineering Solutions",
-                slug: "/solutions/engineering-solutions",
-            },
-            {
-                title: "Equipment and systems",
-                slug: "/solutions/equipment-and-systems",
-            },
-            {
-                title: "Industries we serve",
-                slug: "/solutions/industries-we-serve",
-            },
-        ],
-    },
-    { title: "About", slug: "/about" },
-    { title: "Contacts", slug: "/contacts" },
+  { title: "Home", slug: "/" },
+  { title: "Supply", slug: "/supply" },
+  {
+    title: "Solutions",
+    submenu: [
+      {
+        title: "Engineering Solutions",
+        slug: "/solutions/engineering-solutions",
+      },
+      {
+        title: "Equipment and systems",
+        slug: "/solutions/equipment-and-systems",
+      },
+      {
+        title: "Industries we serve",
+        slug: "/solutions/industries-we-serve",
+      },
+    ],
+  },
+  { title: "About", slug: "/about" },
+  { title: "Contacts", slug: "/contacts" },
 ];
 
+function getActiveIndex(pathname: string): number {
+  if (pathname === "/") return 0;
+  if (pathname === "/supply") return 1;
+  if (pathname.startsWith("/solutions")) return 2;
+  if (pathname === "/about") return 3;
+  if (pathname === "/contacts") return 4;
+  return 0;
+}
+
 export default function NavMenu() {
+  const pathname = usePathname();
+  const activeIndex = getActiveIndex(pathname);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const itemRefs = useRef<(HTMLAnchorElement | HTMLButtonElement | null)[]>([]);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [pillStyle, setPillStyle] = useState<{
+    left: number;
+    top: number;
+    width: number;
+    height: number;
+  }>({ left: 0, top: 0, width: 0, height: 0 });
+
+  // When Solutions is open, pill stays on Solutions; otherwise follows pathname
+  const pillActiveIndex = solutionsOpen ? 2 : activeIndex;
+
+  const updatePill = useCallback(() => {
+    const el = itemRefs.current[pillActiveIndex];
+    const nav = navRef.current;
+    if (!el || !nav) return;
+    const navRect = nav.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    setPillStyle({
+      left: elRect.left - navRect.left,
+      top: elRect.top - navRect.top,
+      width: elRect.width,
+      height: elRect.height,
+    });
+  }, [pillActiveIndex]);
+
+  useEffect(() => {
+    updatePill();
+    const nav = navRef.current;
+    if (!nav) return;
+    const ro = new ResizeObserver(updatePill);
+    ro.observe(nav);
+    return () => ro.disconnect();
+  }, [pillActiveIndex, updatePill]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSolutionsOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (
+        solutionsOpen &&
+        navRef.current &&
+        !navRef.current.contains(target) &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(target)
+      ) {
+        setSolutionsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [solutionsOpen]);
+
+  // Close dropdown when route changes (e.g. after clicking submenu link).
+  // This avoids the pill jerking: we close only after pathname has updated.
+  useEffect(() => {
+    setSolutionsOpen(false);
+  }, [pathname]);
+
+  const solutionsItem = navMenuList[2];
+  const isSolutionsActive = pillActiveIndex === 2;
+
   return (
     <nav
-      className="p-2 rounded-full bg-[linear-gradient(90.95deg,rgba(231,231,231,0.8)_52.25%,rgba(255,255,255,0.8)_99.18%)]
-    shadow-[inset_0px_4px_12.6px_0px_rgba(255,255,255,0.25)] backdrop-blur-[10px]"
+      ref={navRef}
+      className="relative flex p-2 rounded-full bg-[linear-gradient(90.95deg,rgba(231,231,231,0.8)_52.25%,rgba(255,255,255,0.8)_99.18%)] shadow-[inset_0px_4px_12.6px_0px_rgba(255,255,255,0.25)] backdrop-blur-[10px] min-h-[44px]"
     >
       <div
         className="absolute inset-0 rounded-full pointer-events-none"
         style={{
           background:
-            "linear-gradient270.67deg, #F2F2F2 -9.58%, #C7C7C7 103.45%)",
+            "linear-gradient(270.67deg, #F2F2F2 -9.58%, #C7C7C7 103.45%)",
           padding: "1px",
           WebkitMask:
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
@@ -51,6 +140,82 @@ export default function NavMenu() {
           maskComposite: "exclude",
         }}
       />
+
+      {/* Sliding active pill */}
+      <div
+        className="absolute rounded-full bg-[#333333] transition-[left,width,top,height] duration-300 ease-out pointer-events-none z-0"
+        style={{
+          left: pillStyle.left,
+          top: pillStyle.top,
+          width: pillStyle.width,
+          height: pillStyle.height,
+        }}
+        aria-hidden
+      />
+
+      <ul className="relative z-10 flex items-center gap-0 list-none">
+        {navMenuList.map((item, i) => (
+          <li
+            key={item.title}
+            className={`flex ${item.slug ? "relative z-20" : "relative z-10"}`}
+          >
+            {item.slug ? (
+              <Link
+                ref={(el) => {
+                  itemRefs.current[i] = el;
+                }}
+                href={item.slug}
+                onClick={() => setSolutionsOpen(false)}
+                className={`relative z-10 px-4 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#333] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${pillActiveIndex === i ? "text-white" : "text-[#4D4D4D] hover:text-[#333]"}`}
+              >
+                {item.title}
+              </Link>
+            ) : (
+              <>
+                <button
+                  ref={(el) => {
+                    itemRefs.current[i] = el;
+                  }}
+                  type="button"
+                  onClick={() => setSolutionsOpen((prev) => !prev)}
+                  className={`cursor-pointer relative z-10 flex items-center px-4 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#333] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${isSolutionsActive ? "text-white" : "text-[#4D4D4D] hover:text-[#333]"}`}
+                  aria-expanded={solutionsOpen}
+                  aria-haspopup="true"
+                >
+                  {item.title}
+                  <ChevronIcon open={solutionsOpen} />
+                </button>
+                {/* Solutions dropdown */}
+                <div
+                  ref={dropdownRef}
+                  className="absolute left-0 top-full mt-2 min-w-[220px] rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-white/20 overflow-hidden transition-all duration-200 ease-out z-50"
+                  style={{
+                    opacity: solutionsOpen ? 1 : 0,
+                    transform: solutionsOpen
+                      ? "translateY(0) scale(1)"
+                      : "translateY(-8px) scale(0.98)",
+                    pointerEvents: solutionsOpen ? "auto" : "none",
+                    visibility: solutionsOpen ? "visible" : "hidden",
+                  }}
+                >
+                  <ul className="py-2">
+                    {solutionsItem.submenu?.map((sub) => (
+                      <li key={sub.slug}>
+                        <Link
+                          href={sub.slug}
+                          className="block px-5 py-2.5 text-sm font-medium text-[#262626] hover:bg-black/5 transition-colors"
+                        >
+                          {sub.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }
