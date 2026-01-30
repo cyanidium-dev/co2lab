@@ -9,17 +9,19 @@ export default function ChevronIcon({
 }: ChevronIconProps) {
     return (
         <svg
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
             fill="none"
+            xmlns="http://www.w3.org/2000/svg"
             className={`ml-1 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""} ${className}`.trim()}
             aria-hidden
         >
             <path
-                d="M3 4.5L6 7.5L9 4.5"
+                d="M2.72003 10.0333L7.0667 5.68666C7.58003 5.17333 8.42003 5.17333 8.93336 5.68666L13.28 10.0333"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="1.25"
+                strokeMiterlimit="10"
                 strokeLinecap="round"
                 strokeLinejoin="round"
             />

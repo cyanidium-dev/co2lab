@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import ChevronIcon from "@/components/icons/ChevronIcon";
+import ChevronIcon from "@/components/shared/icons/ChevronIcon";
 
 type NavSubmenuItem = {
   title: string;
@@ -149,7 +149,7 @@ export default function NavMenu() {
         aria-hidden
       />
 
-      <ul className="relative z-10 flex items-center gap-0 list-none">
+      <ul className="relative z-10 flex items-center gap-3 list-none">
         {navMenuList.map((item, i) => (
           <li
             key={item.title}
@@ -179,7 +179,7 @@ export default function NavMenu() {
                   aria-haspopup="true"
                 >
                   {item.title}
-                  <ChevronIcon open={solutionsOpen} />
+                  <ChevronIcon open={solutionsOpen} className="ml-2.5 size-4" />
                 </button>
                 {/* Solutions dropdown */}
                 <div
