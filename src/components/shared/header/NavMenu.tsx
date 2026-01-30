@@ -80,6 +80,7 @@ export default function NavMenu() {
     });
   }, [pillActiveIndex]);
 
+  // Sync pill position when active index changes or nav resizes
   useEffect(() => {
     updatePill();
     const nav = navRef.current;
@@ -89,36 +90,31 @@ export default function NavMenu() {
     return () => ro.disconnect();
   }, [pillActiveIndex, updatePill]);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSolutionsOpen(false);
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as Node;
-      if (
-        solutionsOpen &&
-        navRef.current &&
-        !navRef.current.contains(target) &&
-        dropdownRef.current &&
-        !dropdownRef.current.contains(target)
-      ) {
-        setSolutionsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [solutionsOpen]);
-
-  // Close dropdown when route changes (e.g. after clicking submenu link).
-  // This avoids the pill jerking: we close only after pathname has updated.
+  // Close dropdown: on route change, Escape, or click outside
   useEffect(() => {
     setSolutionsOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!solutionsOpen) return;
+    const close = () => setSolutionsOpen(false);
+    const onKeyDown = (e: KeyboardEvent) => e.key === "Escape" && close();
+    const onMouseDown = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (
+        navRef.current?.contains(target) ||
+        dropdownRef.current?.contains(target)
+      )
+        return;
+      close();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    document.addEventListener("mousedown", onMouseDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("mousedown", onMouseDown);
+    };
+  }, [solutionsOpen]);
 
   const solutionsItem = navMenuList[2];
   const isSolutionsActive = pillActiveIndex === 2;
