@@ -1,3 +1,38 @@
+type NavSubmenuItem = {
+    title: string;
+    slug: string;
+};
+
+type NavMenuItem = {
+    title: string;
+    slug?: string;
+    submenu?: NavSubmenuItem[];
+};
+
+const navMenuList: NavMenuItem[] = [
+    { title: "Home", slug: "/" },
+    { title: "Supply", slug: "/supply" },
+    {
+        title: "Solutions",
+        submenu: [
+            {
+                title: "Engineering Solutions",
+                slug: "/solutions/engineering-solutions",
+            },
+            {
+                title: "Equipment and systems",
+                slug: "/solutions/equipment-and-systems",
+            },
+            {
+                title: "Industries we serve",
+                slug: "/solutions/industries-we-serve",
+            },
+        ],
+    },
+    { title: "About", slug: "/about" },
+    { title: "Contacts", slug: "/contacts" },
+];
+
 export default function NavMenu() {
   return (
     <nav
