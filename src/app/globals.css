@@ -2,14 +2,14 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #262626;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-raleway: 'Raleway', sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @layer base {
@@ -18,16 +18,30 @@
     scrollbar-gutter: stable;
   }
 
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+
   html,
   body {
     max-width: 100vw;
     overflow-x: hidden;
+    height: 100%;
   }
 
   body {
     background: var(--color-white);
     color: var(--color-black);
     font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+  }
+
+  main {
+    flex: 1;
   }
 
   a {
