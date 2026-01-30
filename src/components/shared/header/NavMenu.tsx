@@ -162,7 +162,7 @@ export default function NavMenu() {
                 }}
                 href={item.slug}
                 onClick={() => setSolutionsOpen(false)}
-                className={`relative z-10 px-4.5 py-3 rounded-full text-[14px] font-medium leading-[120%] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${pillActiveIndex === i ? "text-white" : "text-black xl:hover:brightness-125"}`}
+                className={`relative z-10 px-4.5 py-3 rounded-full text-[14px] font-medium leading-[120%] border border-transparent transition-[color,border] focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-transparent xl:hover:border-black ${pillActiveIndex === i ? "text-white" : "text-black xl:hover:brightness-125"}`}
               >
                 {item.title}
               </Link>
@@ -174,7 +174,7 @@ export default function NavMenu() {
                   }}
                   type="button"
                   onClick={() => setSolutionsOpen((prev) => !prev)}
-                  className={`cursor-pointer relative z-10 flex items-center px-4.5 py-3 rounded-full text-[14px] font-medium leading-[120%] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${isSolutionsActive ? "text-white" : "text-black xl:hover:brightness-125 xl:hover:text-black"}`}
+                  className={`cursor-pointer relative z-10 flex items-center px-4.5 py-3 rounded-full text-[14px] font-medium leading-[120%] border border-transparent transition-[color,border] focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-transparent xl:hover:border-black ${isSolutionsActive ? "text-white" : "text-black xl:hover:brightness-125 xl:hover:text-black"}`}
                   aria-expanded={solutionsOpen}
                   aria-haspopup="true"
                 >
