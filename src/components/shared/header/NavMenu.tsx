@@ -80,7 +80,6 @@ export default function NavMenu() {
     });
   }, [pillActiveIndex]);
 
-  // Sync pill position when active index changes or nav resizes
   useEffect(() => {
     updatePill();
     const nav = navRef.current;
@@ -90,12 +89,13 @@ export default function NavMenu() {
     return () => ro.disconnect();
   }, [pillActiveIndex, updatePill]);
 
-  // Close dropdown: on route change, Escape, or click outside
+  // Close dropdown: on pathname change, Escape, or click outside
+  const prevPathname = useRef(pathname);
   useEffect(() => {
-    setSolutionsOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
+    if (prevPathname.current !== pathname) {
+      prevPathname.current = pathname;
+      setSolutionsOpen(false);
+    }
     if (!solutionsOpen) return;
     const close = () => setSolutionsOpen(false);
     const onKeyDown = (e: KeyboardEvent) => e.key === "Escape" && close();
@@ -114,7 +114,7 @@ export default function NavMenu() {
       window.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("mousedown", onMouseDown);
     };
-  }, [solutionsOpen]);
+  }, [pathname, solutionsOpen]);
 
   const solutionsItem = navMenuList[2];
   const isSolutionsActive = pillActiveIndex === 2;
@@ -122,7 +122,7 @@ export default function NavMenu() {
   return (
     <nav
       ref={navRef}
-      className="relative flex p-2 rounded-full bg-[linear-gradient(90.95deg,rgba(231,231,231,0.8)_52.25%,rgba(255,255,255,0.8)_99.18%)] shadow-[inset_0px_4px_12.6px_0px_rgba(255,255,255,0.25)] backdrop-blur-[10px] min-h-[44px]"
+      className="hidden md:flex relative p-2 rounded-full bg-[linear-gradient(90.95deg,rgba(231,231,231,0.8)_52.25%,rgba(255,255,255,0.8)_99.18%)] shadow-[inset_0px_4px_12.6px_0px_rgba(255,255,255,0.25)] backdrop-blur-[10px]"
     >
       <div
         className="absolute inset-0 rounded-full pointer-events-none"
@@ -139,7 +139,7 @@ export default function NavMenu() {
 
       {/* Sliding active pill */}
       <div
-        className="absolute rounded-full bg-[#333333] transition-[left,width,top,height] duration-300 ease-out pointer-events-none z-0"
+        className="absolute rounded-full bg-black transition-[left,width,top,height] duration-300 ease-out pointer-events-none z-0"
         style={{
           left: pillStyle.left,
           top: pillStyle.top,
@@ -162,7 +162,7 @@ export default function NavMenu() {
                 }}
                 href={item.slug}
                 onClick={() => setSolutionsOpen(false)}
-                className={`relative z-10 px-4 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#333] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${pillActiveIndex === i ? "text-white" : "text-[#4D4D4D] hover:text-[#333]"}`}
+                className={`relative z-10 px-4.5 py-3 rounded-full text-[14px] font-medium leading-[120%] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${pillActiveIndex === i ? "text-white" : "text-black hover:text-black"}`}
               >
                 {item.title}
               </Link>
@@ -174,7 +174,7 @@ export default function NavMenu() {
                   }}
                   type="button"
                   onClick={() => setSolutionsOpen((prev) => !prev)}
-                  className={`cursor-pointer relative z-10 flex items-center px-4 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#333] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${isSolutionsActive ? "text-white" : "text-[#4D4D4D] hover:text-[#333]"}`}
+                  className={`cursor-pointer relative z-10 flex items-center px-4.5 py-3 rounded-full text-[14px] font-medium leading-[120%] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#333] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${isSolutionsActive ? "text-white" : "text-[#4D4D4D] hover:text-[#333]"}`}
                   aria-expanded={solutionsOpen}
                   aria-haspopup="true"
                 >
@@ -184,7 +184,7 @@ export default function NavMenu() {
                 {/* Solutions dropdown */}
                 <div
                   ref={dropdownRef}
-                  className="absolute left-0 top-full mt-2 min-w-[220px] rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-white/20 overflow-hidden transition-all duration-200 ease-out z-50"
+                  className="absolute left-0 top-full mt-4 min-w-[220px] rounded-[18px] bg-[linear-gradient(90.95deg,rgba(231,231,231,0.8)_52.25%,rgba(255,255,255,0.8)_99.18%)] shadow-[inset_0px_4px_12.6px_0px_rgba(255,255,255,0.25)] backdrop-blur-[10px] transition duration-200 ease-out z-50"
                   style={{
                     opacity: solutionsOpen ? 1 : 0,
                     transform: solutionsOpen
@@ -194,12 +194,24 @@ export default function NavMenu() {
                     visibility: solutionsOpen ? "visible" : "hidden",
                   }}
                 >
+                  <div
+                    className="absolute inset-0 rounded-[18px] pointer-events-none"
+                    style={{
+                      background:
+                        "linear-gradient(270.67deg, #F2F2F2 -9.58%, #C7C7C7 103.45%)",
+                      padding: "1px",
+                      WebkitMask:
+                        "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      WebkitMaskComposite: "xor",
+                      maskComposite: "exclude",
+                    }}
+                  />
                   <ul className="py-2">
                     {solutionsItem.submenu?.map((sub) => (
                       <li key={sub.slug}>
                         <Link
                           href={sub.slug}
-                          className="block px-5 py-2.5 text-sm font-medium text-[#262626] hover:bg-black/5 transition-colors"
+                          className="block px-5 py-2.5 text-sm font-medium hover:bg-black/5 transition-colors"
                         >
                           {sub.title}
                         </Link>
