@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header>
       <Container className="flex py-4 lg:py-11 justify-between lg:justify-start items-center lg:gap-[228px]">
-        <LogoLink />
+        <LogoLink onNavigate={() => setIsOpenBurgerMenu(false)} />
         <NavMenu />
         <BurgerMenu
           isOpenBurgerMenu={isOpenBurgerMenu}

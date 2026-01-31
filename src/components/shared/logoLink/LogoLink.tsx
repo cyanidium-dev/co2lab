@@ -4,6 +4,7 @@ type LogoLinkVariant = "white" | "black";
 
 type LogoLinkProps = {
   variant?: LogoLinkVariant;
+  onNavigate?: () => void;
 };
 
 const fillColor = {
@@ -11,11 +12,19 @@ const fillColor = {
   black: "var(--color-black)",
 };
 
-export default function LogoLink({ variant = "black" }: LogoLinkProps) {
+export default function LogoLink({
+  variant = "black",
+  onNavigate,
+}: LogoLinkProps) {
   const fill = fillColor[variant];
 
   return (
-    <Link href="/" aria-label="Go to home" className="relative z-50">
+    <Link
+      href="/"
+      aria-label="Go to home"
+      className="relative z-50"
+      onClick={onNavigate}
+    >
       <svg
         width="106"
         height="43"
