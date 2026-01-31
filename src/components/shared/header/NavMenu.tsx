@@ -4,50 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ChevronIcon from "@/components/shared/icons/ChevronIcon";
-
-type NavSubmenuItem = {
-  title: string;
-  slug: string;
-};
-
-type NavMenuItem = {
-  title: string;
-  slug?: string;
-  submenu?: NavSubmenuItem[];
-};
-
-const navMenuList: NavMenuItem[] = [
-  { title: "Home", slug: "/" },
-  { title: "Supply", slug: "/supply" },
-  {
-    title: "Solutions",
-    submenu: [
-      {
-        title: "Engineering Solutions",
-        slug: "/solutions/engineering-solutions",
-      },
-      {
-        title: "Equipment and systems",
-        slug: "/solutions/equipment-and-systems",
-      },
-      {
-        title: "Industries we serve",
-        slug: "/solutions/industries-we-serve",
-      },
-    ],
-  },
-  { title: "About", slug: "/about" },
-  { title: "Contacts", slug: "/contacts" },
-];
-
-function getActiveIndex(pathname: string): number {
-  if (pathname === "/") return 0;
-  if (pathname === "/supply") return 1;
-  if (pathname.startsWith("/solutions")) return 2;
-  if (pathname === "/about") return 3;
-  if (pathname === "/contacts") return 4;
-  return 0;
-}
+import { navMenuList, getActiveIndex } from "@/constants/navMenu";
 
 export default function NavMenu() {
   const pathname = usePathname();
