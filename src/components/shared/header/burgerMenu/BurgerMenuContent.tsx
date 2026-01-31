@@ -6,7 +6,7 @@ import {
   burgerMenuVariants,
   burgerListVariants,
 } from "@/utils/animationVariants";
-// import NavMenu from "../navMenu/NavMenu";
+import MobileNavMenu from "./MobileNavMenu";
 import Container from "../../container/Container";
 import Image from "next/image";
 
@@ -23,7 +23,7 @@ export default function BurgerMenuContent({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="md:hidden fixed right-0 top-0 z-40 pt-[108px] pb-[46px] w-full h-dvh max-h-dvh bg-white"
+          className="md:hidden fixed right-0 top-0 z-40 pt-24 pb-[46px] w-full h-dvh max-h-dvh bg-white"
           initial="hidden"
           animate="visible"
           exit="exit"
@@ -41,7 +41,7 @@ export default function BurgerMenuContent({
               exit="exit"
               className="mb-10"
             >
-              {/* <NavMenu setIsOpenBurgerMenu={setIsOpenBurgerMenu} /> */}
+              <MobileNavMenu setIsOpenBurgerMenu={setIsOpenBurgerMenu} />
             </motion.div>
           </Container>
           <motion.div
