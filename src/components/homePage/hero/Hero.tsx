@@ -3,6 +3,7 @@ import MainButton from "@/components/shared/buttons/MainButton";
 import PageTitle from "@/components/shared/titles/PageTitle";
 import Image from "next/image";
 import Badges from "./badge/Badges";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -15,9 +16,12 @@ export default function Hero() {
           <p className="mb-4 lg:mb-10">
             Complete CO₂ solutions — from capture to application
           </p>
-          <MainButton className="sm:max-w-[288px] lg:mb-20">
-            Explore Solutions
-          </MainButton>
+          <Link href="/solutions/engineering-solutions">
+            {" "}
+            <MainButton className="sm:max-w-[288px] lg:mb-20">
+              Explore Solutions
+            </MainButton>
+          </Link>
           <Badges className="hidden lg:flex lg:max-w-[335px]" />
         </div>
         <div className="relative w-full lg:w-[calc(50%-16px)] h-[305px] lg:h-auto  bg-[linear-gradient(176.8deg,rgba(0,0,0,0)_59.28%,rgba(0,0,0,0.6)_79.3%)] rounded-[18px]">
