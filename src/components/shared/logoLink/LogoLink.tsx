@@ -25,7 +25,10 @@ export default function LogoLink({
     <Link
       href="/"
       aria-label="Go to home"
-      className={twMerge("relative z-50", className)}
+      className={twMerge(
+        "relative z-50 transition-opacity xl:hover:opacity-80 focus-visible:opacity-80 transition-duration-300 ease-in-out outline-none",
+        className,
+      )}
       onClick={onNavigate}
     >
       <svg
