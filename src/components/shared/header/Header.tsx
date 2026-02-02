@@ -10,8 +10,9 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 py-4 lg:py-11">
-      <Container className="flex justify-between lg:justify-start items-center lg:gap-[228px] backdrop-blur-md lg:backdrop-blur-none rounded-full">
+      <Container className="flex justify-between lg:justify-start items-center lg:gap-[228px] backdrop-blur-md md:backdrop-blur-none rounded-full">
         <LogoLink onNavigate={() => setIsOpenBurgerMenu(false)} />
+
         <NavMenu />
         <BurgerMenu
           isOpenBurgerMenu={isOpenBurgerMenu}
