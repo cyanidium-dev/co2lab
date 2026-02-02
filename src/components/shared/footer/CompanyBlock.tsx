@@ -10,7 +10,7 @@ const companyLinks = [
 
 export default function CompanyBlock() {
   return (
-    <nav>
+    <nav className="md:w-1/2 lg:w-auto">
       <p className="text-[12px] font-light leading-[120%] mb-5">Company</p>
       <ul className="flex flex-col gap-4">
         {companyLinks.map(({ label, href }) => (
