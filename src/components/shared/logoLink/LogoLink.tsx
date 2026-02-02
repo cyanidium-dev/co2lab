@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 type LogoLinkVariant = "white" | "black";
 
 type LogoLinkProps = {
   variant?: LogoLinkVariant;
   onNavigate?: () => void;
+  className?: string;
 };
 
 const fillColor = {
@@ -15,6 +17,7 @@ const fillColor = {
 export default function LogoLink({
   variant = "black",
   onNavigate,
+  className,
 }: LogoLinkProps) {
   const fill = fillColor[variant];
 
@@ -22,7 +25,7 @@ export default function LogoLink({
     <Link
       href="/"
       aria-label="Go to home"
-      className="relative z-50"
+      className={twMerge("relative z-50", className)}
       onClick={onNavigate}
     >
       <svg
