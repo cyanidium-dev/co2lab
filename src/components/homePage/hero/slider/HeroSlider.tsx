@@ -58,14 +58,13 @@ export default function HeroSlider() {
         </span>
       </div>
 
-      {/* Cards strip: 4 слайди + клон, gap 12px; рух зправа наліво */}
+      {/* Cards strip: основний слайд 250px/310px, gap 12px, решта — превʼю */}
       <div className="overflow-hidden rounded-[18px]">
         <div
-          className="flex ease-out"
+          className="flex w-[1298px] gap-3 ease-out [--step:262px] lg:w-[1598px] lg:[--step:322px]"
           style={{
-            width: "calc(425% + 48px)",
-            gap: "12px",
-            transform: `translateX(calc(-${activeIndex} * (20% + 12px)))`,
+            ["--active" as string]: activeIndex,
+            transform: "translateX(calc(-1 * var(--active) * var(--step)))",
             transition: transitionEnabled
               ? `transform ${TRANSITION_MS}ms ease-out`
               : "none",
@@ -74,8 +73,7 @@ export default function HeroSlider() {
           {heroSlides.map((slide) => (
             <div
               key={slide.id}
-              className="flex w-[250px] lg:w-[310px] shrink-0 items-center gap-2 lg:gap-3.5 rounded-[18px] p-2.5 backdrop-blur-[10px] shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)]"
-              style={{ minWidth: "20%" }}
+              className="flex w-[250px] shrink-0 items-center gap-2 rounded-[18px] p-2.5 shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px] lg:w-[310px] lg:gap-3.5"
             >
               <div className="relative h-[77px] lg:h-[107px] w-[84px] lg:w-[98px] shrink-0 overflow-hidden rounded-[10px]">
                 <Image
