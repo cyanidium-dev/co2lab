@@ -7,6 +7,7 @@ import { heroSlides, HERO_SLIDE_DURATION_MS } from "@/constants/heroSlides";
 const TOTAL = heroSlides.length;
 const TRANSITION_MS = 500;
 const STRIP_POSITIONS = TOTAL + 1;
+const CLONES_COUNT = 3; // перший, другий, третій слайди після останнього для превʼю на широких екранах
 
 export default function HeroSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -61,7 +62,7 @@ export default function HeroSlider() {
       {/* Cards strip: основний слайд 250px/310px, gap 12px, решта — превʼю */}
       <div className="overflow-hidden rounded-[18px]">
         <div
-          className="flex w-[1298px] gap-3 ease-out [--step:262px] lg:w-[1598px] lg:[--step:322px]"
+          className="flex w-[1822px] gap-3 ease-out [--step:262px] lg:w-[2242px] lg:[--step:322px]"
           style={{
             ["--active" as string]: activeIndex,
             transform: "translateX(calc(-1 * var(--active) * var(--step)))",
@@ -94,16 +95,16 @@ export default function HeroSlider() {
               </div>
             </div>
           ))}
-          {/* Клон першого слайду — превʼю нульового, коли активний слайд 3 */}
-          {heroSlides[0] && (
+          {/* Клони 1–3 слайдів для превʼю на широких екранах */}
+          {heroSlides.slice(0, CLONES_COUNT).map((slide, cloneIndex) => (
             <div
-              className="flex w-[250px] lg:w-[310px] items-center gap-2 rounded-[18px] p-2.5 shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px] lg:gap-3.5"
-              style={{ minWidth: "20%" }}
+              key={`clone-${cloneIndex}`}
+              className="flex w-[250px] shrink-0 items-center gap-2 rounded-[18px] p-2.5 shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px] lg:w-[310px] lg:gap-3.5"
               aria-hidden
             >
-              <div className="relative h-[77px] w-[84px] shrink-0 overflow-hidden rounded-[10px] lg:h-[107px] lg:w-[98px]">
+              <div className="relative h-[77px] lg:h-[107px] w-[84px] lg:w-[98px] shrink-0 overflow-hidden rounded-[10px]">
                 <Image
-                  src={heroSlides[0].image}
+                  src={slide.image}
                   alt=""
                   fill
                   className="object-cover"
@@ -111,15 +112,15 @@ export default function HeroSlider() {
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="mb-2 text-[14px] font-medium uppercase leading-[120%] text-white lg:mb-3 lg:text-[16px]">
-                  {heroSlides[0].title}
+                <h3 className="max-w-[171px] mb-2 lg:mb-3 text-[14px] lg:text-[16px] font-medium uppercase leading-[120%] text-white">
+                  {slide.title}
                 </h3>
-                <p className="text-[10px] font-light leading-[120%] text-white lg:text-[12px]">
-                  {heroSlides[0].description}
+                <p className="text-[10px] lg:text-[12px] font-light leading-[120%] text-white">
+                  {slide.description}
                 </p>
               </div>
             </div>
-          )}
+          ))}
         </div>
       </div>
     </div>
