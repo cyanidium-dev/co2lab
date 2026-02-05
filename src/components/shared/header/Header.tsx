@@ -23,7 +23,7 @@ export default function Header() {
       <Container className="relative z-10 flex items-center justify-between rounded-full lg:justify-start lg:gap-[228px]">
         <div className="relative py-2">
           <LogoLink onNavigate={() => setIsOpenBurgerMenu(false)} />
-          {scrollPosition === 0 && (
+          {scrollPosition > 20 && (
             <>
               <div
                 className="hidden md:block absolute w-[calc(100%+16px)] h-full top-0 -left-2 px-4 -z-10 rounded-full bg-[linear-gradient(90.95deg,rgba(231,231,231,0.8)_52.25%,rgba(255,255,255,0.8)_99.18%)] shadow-[inset_0px_4px_12.6px_0px_rgba(255,255,255,0.25)] backdrop-blur-[10px]"
