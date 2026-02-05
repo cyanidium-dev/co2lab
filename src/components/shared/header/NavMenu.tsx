@@ -31,6 +31,7 @@ export default function NavMenu() {
     if (!el || !nav) return;
     const navRect = nav.getBoundingClientRect();
     const elRect = el.getBoundingClientRect();
+    if (elRect.width <= 0 || elRect.height <= 0) return;
     setPillStyle({
       left: elRect.left - navRect.left,
       top: elRect.top - navRect.top,
@@ -45,7 +46,13 @@ export default function NavMenu() {
     if (!nav) return;
     const ro = new ResizeObserver(updatePill);
     ro.observe(nav);
-    return () => ro.disconnect();
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(updatePill);
+    });
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+    };
   }, [pillActiveIndex, updatePill]);
 
   // Після першого отримання позиції — анімація «виростання» з центру (scale 0 → 1)
