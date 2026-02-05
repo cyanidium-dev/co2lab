@@ -29,12 +29,6 @@
     background: var(--color-white);
     color: var(--color-black);
     font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1;
   }
 
   a {
