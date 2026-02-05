@@ -1,0 +1,48 @@
+"use client";
+
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Container from "@/components/shared/container/Container";
+import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
+import SectionTitle from "@/components/shared/titles/SectionTitle";
+
+export default function ContactUs() {
+  const router = useRouter();
+
+  return (
+    <section className="pt-12 pb-24 lg:pt-[136px] lg:pb-[76px]">
+      <Container className="overflow-hidden rounded-[18px]">
+        <div className="relative overflow-hidden rounded-[18px]">
+          <Image
+            src="/images/homePage/contactUs/image.webp"
+            alt="contact us image"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 1280px"
+            priority
+          />
+
+          <div className="relative z-10 flex flex-col justify-end px-3 lg:px-12 pt-8 pb-[148px] lg:py-[84px]">
+            <SectionTitle className="mb-3 text-white lg:mb-8 lg:max-w-[604px]">
+              Let&apos;s build a cleaner future together
+            </SectionTitle>
+            <p
+              className="mb-8 lg:mb-12 max-w-[548px] text-[12px] lg:text-[18px] font-light leading-[120%] text-white 
+            "
+            >
+              Our engineers will help you integrate CO₂ solutions that meet your
+              production and environmental goals. Get advice and learn how to
+              optimize your carbon cycle.
+            </p>
+            <SecondaryButton
+              variant="white"
+              onClick={() => router.push("/contacts")}
+            >
+              Contact us
+            </SecondaryButton>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
