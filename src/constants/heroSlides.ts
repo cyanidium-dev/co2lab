@@ -4,27 +4,27 @@ export const heroSlides = [
     title: "Solutions",
     description:
       "Comprehensive engineering solutions tailored to your CO₂ processes.",
-    image: "/images/homePage/activity/activityOne.webp",
+    image: "/images/homePage/hero/slideOne.webp",
   },
   {
     id: 2,
     title: "Equipment & Systems",
     description:
       "Innovative equipment ensuring performance and efficiency.",
-    image: "/images/homePage/efficiency/leftTop.webp",
+    image: "/images/homePage/hero/slideTwo.webp",
   },
   {
     id: 3,
     title: "Production & Supply",
     description: "Reliable CO₂ production and distribution solutions.",
-    image: "/images/homePage/activity/activityThree.webp",
+    image: "/images/homePage/hero/slideThree.webp",
   },
   {
     id: 4,
     title: "Industries We Serve",
     description:
       "Trusted by leaders across energy, food, and manufacturing sectors.",
-    image: "/images/homePage/hero/hero.webp",
+    image: "/images/homePage/hero/slideFour.webp",
   },
 ] as const;
 

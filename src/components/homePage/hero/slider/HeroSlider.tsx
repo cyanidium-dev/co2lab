@@ -99,7 +99,7 @@ export default function HeroSlider() {
           {/* Клон першого слайду — превʼю нульового, коли активний слайд 3 */}
           {heroSlides[0] && (
             <div
-              className="flex w-[250px] shrink-0 items-center gap-2 rounded-[18px] p-2.5 shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px] lg:w-[632px] lg:gap-3.5"
+              className="flex w-[250px] lg:w-[310px] items-center gap-2 rounded-[18px] p-2.5 shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px] lg:gap-3.5"
               style={{ minWidth: "20%" }}
               aria-hidden
             >
