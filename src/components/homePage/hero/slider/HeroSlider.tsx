@@ -39,7 +39,7 @@ export default function HeroSlider() {
   const displayIndex = Math.min(activeIndex, TOTAL - 1);
 
   return (
-    <div className="flex flex-col justify-end rounded-[18px] py-3 lg:px-7 pl-3 lg:pl-7">
+    <div className="flex h-full min-h-full flex-col justify-end rounded-[18px] py-3 pl-3 lg:px-7 lg:pl-7">
       {/* Top row: номер завжди 01, progress bar, total */}
       <div className="mb-2.5 lg:mb-3 flex items-center gap-3 w-[250px] lg:w-[311px]">
         <span className="text-[16px] lg:text-[20px] font-semibold leading-[120%] text-white">
@@ -99,10 +99,11 @@ export default function HeroSlider() {
           {/* Клон першого слайду — превʼю нульового, коли активний слайд 3 */}
           {heroSlides[0] && (
             <div
-              className="flex w-[20%] shrink-0 items-center gap-4 rounded-[18px] bg-black/40 p-4 backdrop-blur-md lg:gap-5 lg:p-5"
+              className="flex w-[250px] shrink-0 items-center gap-2 rounded-[18px] p-2.5 shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px] lg:w-[632px] lg:gap-3.5"
+              style={{ minWidth: "20%" }}
               aria-hidden
             >
-              <div className="relative h-[100px] w-[100px] shrink-0 overflow-hidden rounded-xl lg:h-[140px] lg:w-[140px]">
+              <div className="relative h-[77px] w-[84px] shrink-0 overflow-hidden rounded-[10px] lg:h-[107px] lg:w-[98px]">
                 <Image
                   src={heroSlides[0].image}
                   alt=""
@@ -112,10 +113,10 @@ export default function HeroSlider() {
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="mb-1 text-lg font-medium uppercase leading-tight text-white lg:mb-2 lg:text-xl">
+                <h3 className="mb-2 text-[14px] font-medium uppercase leading-[120%] text-white lg:mb-3 lg:text-[16px]">
                   {heroSlides[0].title}
                 </h3>
-                <p className="text-sm leading-snug text-white/90 lg:text-base">
+                <p className="text-[10px] font-light leading-[120%] text-white lg:text-[12px]">
                   {heroSlides[0].description}
                 </p>
               </div>
