@@ -18,7 +18,9 @@ export default function NavMenu() {
     top: number;
     width: number;
     height: number;
-  }>({ left: 0, top: 0, width: 0, height: 0 });
+  } | null>(null);
+  const [pillScale, setPillScale] = useState(0);
+  const hasAnimatedInitial = useRef(false);
 
   // When Solutions is open, pill stays on Solutions; otherwise follows pathname
   const pillActiveIndex = solutionsOpen ? 2 : activeIndex;
@@ -29,6 +31,7 @@ export default function NavMenu() {
     if (!el || !nav) return;
     const navRect = nav.getBoundingClientRect();
     const elRect = el.getBoundingClientRect();
+    if (elRect.width <= 0 || elRect.height <= 0) return;
     setPillStyle({
       left: elRect.left - navRect.left,
       top: elRect.top - navRect.top,
@@ -43,8 +46,22 @@ export default function NavMenu() {
     if (!nav) return;
     const ro = new ResizeObserver(updatePill);
     ro.observe(nav);
-    return () => ro.disconnect();
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(updatePill);
+    });
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+    };
   }, [pillActiveIndex, updatePill]);
+
+  // Після першого отримання позиції — анімація «виростання» з центру (scale 0 → 1)
+  useEffect(() => {
+    if (!pillStyle || hasAnimatedInitial.current) return;
+    hasAnimatedInitial.current = true;
+    const raf = requestAnimationFrame(() => setPillScale(1));
+    return () => cancelAnimationFrame(raf);
+  }, [pillStyle]);
 
   // Close dropdown: on pathname change, Escape, or click outside
   const prevPathname = useRef(pathname);
@@ -94,17 +111,20 @@ export default function NavMenu() {
         }}
       />
 
-      {/* Sliding active pill */}
-      <div
-        className="absolute rounded-full bg-black transition-[left,width,top,height] duration-300 ease-out pointer-events-none z-0"
-        style={{
-          left: pillStyle.left,
-          top: pillStyle.top,
-          width: pillStyle.width,
-          height: pillStyle.height,
-        }}
-        aria-hidden
-      />
+      {/* Sliding active pill: при першому показі з’являється з центру (scale 0→1), далі їздить по пунктах */}
+      {pillStyle && (
+        <div
+          className="absolute rounded-full bg-black origin-center pointer-events-none z-0 transition-[left,width,top,height,transform] duration-300 ease-out"
+          style={{
+            left: pillStyle.left,
+            top: pillStyle.top,
+            width: pillStyle.width,
+            height: pillStyle.height,
+            transform: `scale(${pillScale})`,
+          }}
+          aria-hidden
+        />
+      )}
 
       <ul className="relative z-10 flex items-center gap-3 list-none">
         {navMenuList.map((item, i) => (

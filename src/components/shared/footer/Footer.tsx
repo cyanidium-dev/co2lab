@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="py-8 bg-black text-white rounded-t-[20px]">
       <Container className="flex flex-col gap-12">
-        <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between gap-12 lg:gap-21 xl:gap-[168px]">
+        <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between gap-12 lg:gap-20 xl:gap-[167px]">
           <LogoBlock />
           <CompanyBlock />
           <SupportBlock />
