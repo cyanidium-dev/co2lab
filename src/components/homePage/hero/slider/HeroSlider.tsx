@@ -39,7 +39,7 @@ export default function HeroSlider() {
   const displayIndex = Math.min(activeIndex, TOTAL - 1);
 
   return (
-    <div className="flex h-full min-h-full flex-col justify-end rounded-[18px] py-3 pl-3 lg:px-7 lg:pl-7">
+    <div className="flex h-full min-h-full flex-col justify-end rounded-[18px] py-3 lg:py-7 pl-3 lg:pl-7">
       {/* Top row: номер завжди 01, progress bar, total */}
       <div className="mb-2.5 lg:mb-3 flex items-center gap-3 w-[250px] lg:w-[311px]">
         <span className="text-[16px] lg:text-[20px] font-semibold leading-[120%] text-white">
@@ -74,7 +74,7 @@ export default function HeroSlider() {
           {heroSlides.map((slide) => (
             <div
               key={slide.id}
-              className="flex w-[250px] lg:w-[632px] shrink-0 items-center gap-2 lg:gap-3.5 rounded-[18px] p-2.5 backdrop-blur-[10px] shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)]"
+              className="flex w-[250px] lg:w-[310px] shrink-0 items-center gap-2 lg:gap-3.5 rounded-[18px] p-2.5 backdrop-blur-[10px] shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)]"
               style={{ minWidth: "20%" }}
             >
               <div className="relative h-[77px] lg:h-[107px] w-[84px] lg:w-[98px] shrink-0 overflow-hidden rounded-[10px]">
@@ -87,7 +87,7 @@ export default function HeroSlider() {
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="mb-2 lg:mb-3 text-[14px] lg:text-[16px] font-medium uppercase leading-[120%] text-white">
+                <h3 className="max-w-[171px] mb-2 lg:mb-3 text-[14px] lg:text-[16px] font-medium uppercase leading-[120%] text-white">
                   {slide.title}
                 </h3>
                 <p className="text-[10px] lg:text-[12px] font-light leading-[120%] text-white">
