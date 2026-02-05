@@ -22,6 +22,23 @@ export default function ContactUs() {
             priority
           />
 
+          <Image
+            src="/images/homePage/contactUs/smokeMob.webp"
+            alt=""
+            width={338}
+            height={524}
+            className="pointer-events-none absolute -bottom-62 -right-7 z-[5] lg:hidden"
+            aria-hidden
+          />
+          <Image
+            src="/images/homePage/contactUs/smokeDesk.webp"
+            alt=""
+            width={758}
+            height={31}
+            className="pointer-events-none absolute -bottom-98 -right-7 z-[5] hidden lg:block"
+            aria-hidden
+          />
+
           <div className="relative z-10 flex flex-col justify-end px-3 lg:px-12 pt-8 pb-[148px] lg:py-[84px]">
             <SectionTitle className="mb-3 text-white lg:mb-8 lg:max-w-[604px]">
               Let&apos;s build a cleaner future together
