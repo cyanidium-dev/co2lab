@@ -32,7 +32,7 @@ export default function ActivityCard({ item }: ActivityCardProps) {
                 src={item.backgroundImage}
                 alt=""
                 fill
-                className="object-cover"
+                className="object-cover xl:group-hover:scale-105 transition-transform duration-1500 ease-in-out will-change-transform"
                 sizes="(max-width: 1024px) 100vw, 1024px"
               />
             </>
