@@ -32,7 +32,7 @@ export default function ActivityCard({ item }: ActivityCardProps) {
                 src={item.backgroundImage}
                 alt=""
                 fill
-                className="object-cover"
+                className="object-cover xl:group-hover:scale-105 transition-transform duration-1500 ease-in-out will-change-transform"
                 sizes="(max-width: 1024px) 100vw, 1024px"
               />
             </>
@@ -58,7 +58,7 @@ export default function ActivityCard({ item }: ActivityCardProps) {
           }`}
           aria-hidden
         >
-          <ArrowIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px] sm:h-5 sm:w-5" />
+          <ArrowIcon className="h-4 w-4 transition-transform duration-300 ease-in-out will-change-transform xl:group-hover:translate-x-[2px] xl:group-hover:-translate-y-[2px] sm:h-5 sm:w-5" />
         </span>
       </div>
     </Link>
