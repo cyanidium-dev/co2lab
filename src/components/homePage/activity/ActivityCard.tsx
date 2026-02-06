@@ -58,7 +58,7 @@ export default function ActivityCard({ item }: ActivityCardProps) {
           }`}
           aria-hidden
         >
-          <ArrowIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px] sm:h-5 sm:w-5" />
+          <ArrowIcon className="h-4 w-4 transition-transform duration-300 ease-in-out will-change-transform xl:group-hover:translate-x-[2px] xl:group-hover:-translate-y-[2px] sm:h-5 sm:w-5" />
         </span>
       </div>
     </Link>
