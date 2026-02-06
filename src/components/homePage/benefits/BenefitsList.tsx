@@ -1,4 +1,22 @@
+"use client";
+
 import Image from "next/image";
+import * as motion from "motion/react-client";
+
+const slideInTransition = {
+  duration: 1.5,
+  ease: "easeInOut" as const,
+};
+
+const viewport = { once: true, margin: "-60px 0px" };
+
+const slideEnd = { opacity: 1, x: 0, scale: 1 };
+
+// Відстань руху: перша картка найбільша, кожна наступна трохи менша
+const slideDistances = [80, 60, 40, 20];
+
+// Початковий scale: 0.9 → 0.85 → 0.8 для трьох світлих карток
+const initialScales = [0.9, 0.85, 0.8];
 
 // Мобілка: перша 142×142, друга 212×331, третя 99×106. lg — розміри з SVG.
 const benefitCards = [
@@ -38,7 +56,13 @@ export default function BenefitsList() {
   return (
     <div className="flex flex-wrap gap-x-4 gap-y-8 md:gap-5 xs:mx-auto xs:max-w-[408px] md:mx-0 md:max-w-full">
       {/* Primary dark card — тільки текст */}
-      <div className="relative flex min-h-[304px] flex-[0_0_calc(50%-8px)] flex-col justify-center overflow-hidden rounded-full bg-black p-3.5 text-white lg:min-h-[490px] lg:p-5 md:flex-[0_0_calc(25%-15px)]">
+      <motion.div
+        initial={{ opacity: 0, x: slideDistances[0], scale: 0.95 }}
+        whileInView={slideEnd}
+        viewport={viewport}
+        transition={{ ...slideInTransition, delay: 0 }}
+        className="relative flex min-h-[304px] flex-[0_0_calc(50%-8px)] flex-col justify-center overflow-hidden rounded-full bg-black p-3.5 text-white lg:min-h-[490px] lg:p-5 md:flex-[0_0_calc(25%-15px)]"
+      >
         <Image
           src="/images/homePage/benefits/imageOneTop.svg"
           alt=""
@@ -62,12 +86,20 @@ export default function BenefitsList() {
           Optimize production and reduce costs with smart CO₂ solutions tailored
           to your needs.
         </p>
-      </div>
+      </motion.div>
 
       {/* Картки з чергуванням: картинка → текст або текст → картинка */}
-      {benefitCards.map((item) => (
-        <div
+      {benefitCards.map((item, index) => (
+        <motion.div
           key={item.id}
+          initial={{
+            opacity: 0,
+            x: slideDistances[index + 1],
+            scale: initialScales[index],
+          }}
+          whileInView={slideEnd}
+          viewport={viewport}
+          transition={{ ...slideInTransition, delay: 0.2 * (index + 1) }}
           className="flex min-h-[304px] flex-[0_0_calc(50%-8px)] flex-col items-center justify-center rounded-full border-3 border-black bg-white text-center text-black md:flex-[0_0_calc(25%-15px)] lg:min-h-[490px]"
         >
           {item.imageFirst ? (
@@ -97,7 +129,7 @@ export default function BenefitsList() {
               />
             </>
           )}
-        </div>
+        </motion.div>
       ))}
     </div>
   );
