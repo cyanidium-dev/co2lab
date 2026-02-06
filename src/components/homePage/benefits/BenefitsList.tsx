@@ -13,7 +13,10 @@ const viewport = { once: true, margin: "-60px 0px" };
 const slideEnd = { opacity: 1, x: 0, scale: 1 };
 
 // Відстань руху: перша картка найбільша, кожна наступна трохи менша
-const slideDistances = [120, 100, 80, 60];
+const slideDistances = [80, 60, 40, 20];
+
+// Початковий scale: 0.9 → 0.85 → 0.8 для трьох світлих карток
+const initialScales = [0.9, 0.85, 0.8];
 
 // Мобілка: перша 142×142, друга 212×331, третя 99×106. lg — розміри з SVG.
 const benefitCards = [
@@ -89,10 +92,14 @@ export default function BenefitsList() {
       {benefitCards.map((item, index) => (
         <motion.div
           key={item.id}
-          initial={{ opacity: 0, x: slideDistances[index + 1], scale: 0.95 }}
+          initial={{
+            opacity: 0,
+            x: slideDistances[index + 1],
+            scale: initialScales[index],
+          }}
           whileInView={slideEnd}
           viewport={viewport}
-          transition={{ ...slideInTransition, delay: 0.35 * (index + 1) }}
+          transition={{ ...slideInTransition, delay: 0.2 * (index + 1) }}
           className="flex min-h-[304px] flex-[0_0_calc(50%-8px)] flex-col items-center justify-center rounded-full border-3 border-black bg-white text-center text-black md:flex-[0_0_calc(25%-15px)] lg:min-h-[490px]"
         >
           {item.imageFirst ? (
