@@ -1,13 +1,23 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { useScroll, useMotionValueEvent } from "motion/react";
 import Container from "../container/Container";
 import LogoLink from "../logoLink/LogoLink";
 import NavMenu from "./NavMenu";
 import BurgerMenu from "./burgerMenu/BurgerMenu";
 
+const WHITE_LOGO_PATHS = [
+  "/solutions/engineering-solutions",
+  "/solutions/equipment-and-systems",
+  "/supply",
+  "/solutions/industries-we-serve",
+];
+
 export default function Header() {
+  const pathname = usePathname();
+  const whiteLogoOnLg = WHITE_LOGO_PATHS.includes(pathname);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const { scrollY } = useScroll();
@@ -15,8 +25,6 @@ export default function Header() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrollPosition(latest);
   });
-
-  console.log(scrollPosition);
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 py-4 lg:py-11">
@@ -42,8 +50,15 @@ export default function Header() {
             />
           </>
         )}
-        <div className="relative py-2">
-          <LogoLink onNavigate={() => setIsOpenBurgerMenu(false)} />
+        <div className={`relative py-2 ${whiteLogoOnLg ? "lg:ml-7" : ""}`}>
+          <LogoLink
+            onNavigate={() => setIsOpenBurgerMenu(false)}
+            className={
+              whiteLogoOnLg && scrollPosition <= 20
+                ? "lg:[--logo-fill:var(--color-white)]"
+                : undefined
+            }
+          />
           {scrollPosition > 20 && (
             <>
               <div

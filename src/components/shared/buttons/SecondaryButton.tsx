@@ -9,6 +9,17 @@ interface SecondaryButtonProps {
   onClick?: () => void;
 }
 
+const variantStyles = {
+  white: {
+    text: "bg-white text-[var(--color-black)]",
+    icon: "bg-white text-[var(--color-black)]",
+  },
+  black: {
+    text: "bg-[var(--color-black)] text-white",
+    icon: "bg-[var(--color-black)] text-white",
+  },
+} as const;
+
 export default function SecondaryButton({
   type = "button",
   children,
@@ -16,7 +27,7 @@ export default function SecondaryButton({
   variant = "white",
   onClick,
 }: SecondaryButtonProps) {
-  const isBlack = variant === "black";
+  const styles = variantStyles[variant];
 
   return (
     <button
@@ -29,12 +40,18 @@ export default function SecondaryButton({
       )}
     >
       <span
-        className={`flex items-center justify-center h-full px-7 lg:px-9 py-3 rounded-full text-[12px] lg:text-[14px] font-normal leading-[120%] ${isBlack ? "bg-black text-white" : "bg-white text-black"}`}
+        className={twMerge(
+          "flex items-center justify-center h-full px-7 lg:px-9 py-3 rounded-full text-[12px] lg:text-[14px] font-normal leading-[120%]",
+          styles.text,
+        )}
       >
         {children}
       </span>
       <span
-        className={`flex items-center justify-center h-full aspect-square py-3 rounded-full ${isBlack ? "bg-black text-white" : "bg-white text-black"}`}
+        className={twMerge(
+          "flex items-center justify-center h-full aspect-square -ml-2 py-3 rounded-full",
+          styles.icon,
+        )}
       >
         <ArrowIcon className="h-[14px] w-[17px] shrink-0 transition-transform duration-300 ease-in-out group-focus-visible:translate-x-[2px] group-focus-visible:-translate-y-[2px] xl:group-hover:translate-x-[2px] xl:group-hover:-translate-y-[2px]" />
       </span>
