@@ -34,7 +34,10 @@ export default function Technologies() {
     <section className="py-12 lg:pt-[136px] lg:pb-24 relative">
       <Container className="relative z-10">
         <ul className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-5 list-none p-0 m-0">
-          <li key="title" className="pb-4 md:w-[calc(50%-10px)]">
+          <li
+            key="title"
+            className="pb-4 md:w-[calc(50%-10px)] md:order-1 md:my-auto"
+          >
             <SectionTitle className="mb-3 lg:mb-6 lg:text-[44px] xl:text-[48px]">
               <span className="block">CO₂ capture</span>
               <span className="block pl-[114px]">& upgrading</span>
@@ -46,7 +49,16 @@ export default function Technologies() {
           </li>
 
           {technologies.map((item, idx) => (
-            <li key={item.href} className="md:w-[calc(50%-10px)] md:h-auto">
+            <li
+              key={item.href}
+              className={`md:w-[calc(50%-10px)] md:h-auto ${
+                idx === 2
+                  ? "md:order-2"
+                  : idx === 3
+                    ? "md:order-4"
+                    : "md:order-3"
+              }`}
+            >
               <Link
                 href={item.href}
                 className={`group flex gap-3 md:items-center md:h-full p-4 lg:p-3 justify-between transition-opacity xl:hover:opacity-95 focus-visible:opacity-95 outline-none rounded-[20px] overflow-hidden ${
