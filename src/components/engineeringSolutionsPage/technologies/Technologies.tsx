@@ -61,7 +61,7 @@ export default function Technologies() {
                   </h3>
                   <SecondaryButton>Read more</SecondaryButton>
                 </div>
-                <div className="relative rounded-[12px] shrink-0 h-auto w-[137px] overflow-hidden">
+                <div className="relative rounded-[12px] shrink-0 h-auto w-[117px] overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}

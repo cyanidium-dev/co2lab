@@ -34,7 +34,7 @@ export default function SecondaryButton({
         {children}
       </span>
       <span
-        className={`flex items-center justify-center h-full aspect-square py-3 rounded-full ${isBlack ? "bg-black text-white" : "bg-white text-black"}`}
+        className={`flex items-center justify-center h-full aspect-square -ml-2 py-3 rounded-full ${isBlack ? "bg-black text-white" : "bg-white text-black"}`}
       >
         <ArrowIcon className="h-[14px] w-[17px] shrink-0 transition-transform duration-300 ease-in-out group-focus-visible:translate-x-[2px] group-focus-visible:-translate-y-[2px] xl:group-hover:translate-x-[2px] xl:group-hover:-translate-y-[2px]" />
       </span>
