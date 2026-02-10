@@ -33,35 +33,40 @@ export default function Technologies() {
   return (
     <section className="py-12 lg:pt-[136px] lg:pb-24 relative">
       <Container className="relative z-10">
-        <ul className="flex flex-col gap-4 lg:gap-6 list-none p-0 m-0">
-          <li key="title" className="pb-4">
-            <SectionTitle className="mb-3 lg:mb-6">
+        <ul className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-5 list-none p-0 m-0">
+          <li key="title" className="pb-4 md:w-[calc(50%-10px)]">
+            <SectionTitle className="mb-3 lg:mb-6 lg:text-[44px] xl:text-[48px]">
               <span className="block">CO₂ capture</span>
               <span className="block pl-[114px]">& upgrading</span>
             </SectionTitle>
-            <p className="">
+            <p className="lg:max-w-[460px]">
               Advanced technologies for efficient and sustainable CO₂ recovery
               from any source.
             </p>
           </li>
 
-          {technologies.map((item) => (
-            <li key={item.href} className="">
+          {technologies.map((item, idx) => (
+            <li key={item.href} className="md:w-[calc(50%-10px)] md:h-auto">
               <Link
                 href={item.href}
-                className={`group flex gap-3 p-4 lg:p-3 transition-opacity xl:hover:opacity-95 focus-visible:opacity-95 outline-none rounded-[20px] overflow-hidden ${
+                className={`group flex gap-3 md:items-center md:h-full p-4 lg:p-3 justify-between transition-opacity xl:hover:opacity-95 focus-visible:opacity-95 outline-none rounded-[20px] overflow-hidden ${
                   item.dark
                     ? "bg-black text-white"
                     : "bg-white text-black border border-black"
                 }`}
               >
                 <div>
-                  <h3 className="text-[20px] lg:text-[24px] font-semibold leading-[120%] uppercase mb-4 lg:mb-6">
+                  <h3 className="lg:max-w-[219px] text-[20px] lg:text-[24px] font-semibold leading-[120%] uppercase mb-4 lg:mb-6">
                     {item.title}
                   </h3>
-                  <SecondaryButton>Read more</SecondaryButton>
+                  <SecondaryButton
+                    variant={item.dark ? "white" : "black"}
+                    className="h-10 lg:h-10"
+                  >
+                    Read more
+                  </SecondaryButton>
                 </div>
-                <div className="relative rounded-[12px] shrink-0 h-auto w-[117px] overflow-hidden">
+                <div className="relative rounded-[12px] shrink-0 h-full w-[117px] lg:w-[187px] xl:w-[280px] md:min-h-[117px] lg:min-h-[228px] overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
