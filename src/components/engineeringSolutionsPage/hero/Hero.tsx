@@ -8,7 +8,6 @@ export default function Hero() {
     <section className="pt-[72px] pb-4 md:pt-[82px] lg:pt-5 md:pb-0">
       <Container>
         <div className="relative px-3 lg:px-6.5 py-[168px] lg:pt-[275px] lg:pb-[154px] rounded-[18px] overflow-hidden">
-          {" "}
           <Image
             src="/images/engineeringSolutionsPage/hero/hero.webp"
             alt="Hero"

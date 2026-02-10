@@ -54,7 +54,9 @@ export default function Header() {
           <LogoLink
             onNavigate={() => setIsOpenBurgerMenu(false)}
             className={
-              whiteLogoOnLg ? "lg:[--logo-fill:var(--color-white)]" : undefined
+              whiteLogoOnLg && scrollPosition <= 20
+                ? "lg:[--logo-fill:var(--color-white)]"
+                : undefined
             }
           />
           {scrollPosition > 20 && (
