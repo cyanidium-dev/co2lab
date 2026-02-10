@@ -1,5 +1,9 @@
-import EngineeringSolutionsPage from "@/components/engineeringSolutionsPage/EngineeringSolutionsPage";
+import Hero from "@/components/engineeringSolutionsPage/hero/Hero";
 
 export default function EngineeringSolutions() {
-    return <EngineeringSolutionsPage />;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
