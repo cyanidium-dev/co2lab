@@ -32,14 +32,30 @@ const technologies = [
 export default function Technologies() {
   return (
     <section className="py-12 lg:pt-[136px] lg:pb-24 relative">
-      <Container className="relative z-10">
+      <Container className="relative">
+        <Image
+          src="/images/engineeringSolutionsPage/technologies/bgMobile.svg"
+          alt=""
+          width={150}
+          height={192}
+          className="absolute top-[-80px] left-[-22px] -z-10 pointer-events-none md:hidden"
+          aria-hidden
+        />
+        <Image
+          src="/images/engineeringSolutionsPage/technologies/bgDesktop.svg"
+          alt=""
+          width={279}
+          height={333}
+          className="absolute top-[-112px] left-[-40px] -z-10 pointer-events-none hidden md:block"
+          aria-hidden
+        />
         <ul className="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-5 list-none p-0 m-0">
           <li
             key="title"
             className="pb-4 md:w-[calc(50%-10px)] md:order-1 md:my-auto"
           >
             <SectionTitle className="mb-3 lg:mb-6 lg:text-[44px] xl:text-[48px]">
-              <span className="block">CO₂ capture</span>
+              <span className="block">CO₂ Capture</span>
               <span className="block pl-[114px]">& upgrading</span>
             </SectionTitle>
             <p className="lg:max-w-[460px]">
@@ -52,9 +68,9 @@ export default function Technologies() {
             <li
               key={item.href}
               className={`md:w-[calc(50%-10px)] md:h-auto ${
-                idx === 2
+                idx === 0
                   ? "md:order-2"
-                  : idx === 3
+                  : idx === 1
                     ? "md:order-4"
                     : "md:order-3"
               }`}
