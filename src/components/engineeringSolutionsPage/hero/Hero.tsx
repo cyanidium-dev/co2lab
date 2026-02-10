@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-[72px] pb-4 lg:pt-5 lg:pb-0">
+    <section className="pt-[72px] pb-4 md:pt-[82px] lg:pt-5 md:pb-0">
       <Container>
         <div className="relative px-3 lg:px-6.5 py-[168px] lg:pt-[275px] lg:pb-[154px] rounded-[18px] overflow-hidden">
           {" "}
