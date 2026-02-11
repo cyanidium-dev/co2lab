@@ -1,4 +1,4 @@
-import Badge from "@/components/homePage/hero/badge/Badge";
+import Badge from "@/components/shared/badge/Badge";
 
 const topBadge = "FSSC 22000";
 const rowBadges = ["ISBT", "AIGA", "FDA"] as const;

@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import Badge from "./Badge";
+import Badge from "@/components/shared/badge/Badge";
 
 const badgeLabels = [
   "Efficiency",

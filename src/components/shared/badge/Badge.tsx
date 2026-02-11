@@ -12,7 +12,7 @@ const lightBorderStyle = {
 
 const darkBorderStyle = {
   background:
-    "linear-gradient(91.17deg, rgba(148, 148, 148, 0.2) -0.34%, #C7C7C7 100.72%)",
+    "linear-gradient(91.17deg, rgba(255, 255, 255, 0.15) -0.34%, rgba(148, 148, 148, 0.4) 100.72%)",
   padding: "1px",
   WebkitMask:
     "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
