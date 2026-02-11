@@ -1,4 +1,5 @@
 import Hero from "@/components/engineeringSolutionsPage/hero/Hero";
+import Processing from "@/components/engineeringSolutionsPage/processing/Processing";
 import Technologies from "@/components/engineeringSolutionsPage/technologies/Technologies";
 
 export default function EngineeringSolutions() {
@@ -6,6 +7,7 @@ export default function EngineeringSolutions() {
     <>
       <Hero />
       <Technologies />
+      <Processing />
     </>
   );
 }
