@@ -9,14 +9,14 @@ const technologies = [
   {
     title: "Equipment & modular CO₂ systems",
     href: "/solutions/equipment-and-systems",
-    image: "/images/engineeringSolutionsPage/technologies/first.webp",
+    image: "/images/engineeringSolutionsPage/technologies/second.webp",
     imageAlt: "Equipment and modular CO₂ systems",
     dark: true,
   },
   {
     title: "Full-cycle CO₂ production and supply",
     href: "/supply",
-    image: "/images/engineeringSolutionsPage/technologies/second.webp",
+    image: "/images/engineeringSolutionsPage/technologies/first.webp",
     imageAlt: "Full-cycle CO₂ production and supply",
     dark: false,
   },
@@ -94,7 +94,7 @@ export default function Technologies() {
                     Read more
                   </SecondaryButton>
                 </div>
-                <div className="relative rounded-[12px] shrink-0 h-full w-[117px] lg:w-[187px] xl:w-[280px] md:min-h-[117px] lg:min-h-[228px] overflow-hidden">
+                <div className="relative rounded-[12px] shrink-0 lg:h-full w-[117px] lg:w-[187px] xl:w-[280px] md:min-h-[117px] lg:min-h-[228px] overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
