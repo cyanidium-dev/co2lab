@@ -13,7 +13,23 @@ export default function DryIce() {
             fill
             className="object-cover -z-10"
           />
-          <div className="lg:max-w-[813px]">
+          <Image
+            src="/images/engineeringSolutionsPage/dryIce/smokeMob.webp"
+            alt=""
+            width={338}
+            height={524}
+            className="pointer-events-none absolute right-0 -bottom-62 z-0 lg:hidden object-cover"
+            aria-hidden
+          />
+          <Image
+            src="/images/engineeringSolutionsPage/dryIce/smokeDesk.webp"
+            alt=""
+            width={636}
+            height={436}
+            className="pointer-events-none absolute right-0 bottom-0 z-0 object-contain hidden lg:block"
+            aria-hidden
+          />
+          <div className="relative z-10 md:max-w-[516px] lg:max-w-[720px] xl:max-w-[813px]">
             {" "}
             <p className="mb-3 lg:mb-6 text-[12px] lg:text-[16px] font-light leading-[120%]">
               From Pelletizers to Applications
