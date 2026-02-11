@@ -5,7 +5,23 @@ import Image from "next/image";
 export default function Processing() {
   return (
     <section className="py-12 lg:pt-30 lg:pb-0">
-      <Container className="flex flex-col sm:flex-row-reverse gap-8 lg:gap-9">
+      <Container className="relative flex flex-col sm:flex-row-reverse gap-8 lg:gap-9">
+        <Image
+          src="/images/engineeringSolutionsPage/processing/bgMobile.svg"
+          alt=""
+          width={150}
+          height={192}
+          className="absolute top-[-135px] right-[-20px] -z-10 pointer-events-none md:hidden"
+          aria-hidden
+        />
+        <Image
+          src="/images/engineeringSolutionsPage/processing/bgDesktop.svg"
+          alt=""
+          width={279}
+          height={333}
+          className="absolute top-[-232px] right-[-25px] -z-10 pointer-events-none hidden md:block"
+          aria-hidden
+        />
         <div className="flex flex-col sm:justify-center sm:w-[calc(50%-11px)] lg:w-[calc(50%-11px)] xl:px-4">
           <SectionTitle className="mb-3 lg:mb-4.5 lg:text-[44px] xl:text-[48px]">
             <span className="block">High-Purity</span>
