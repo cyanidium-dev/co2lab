@@ -3,6 +3,7 @@ import Processing from "@/components/engineeringSolutionsPage/processing/Process
 import Technologies from "@/components/engineeringSolutionsPage/technologies/Technologies";
 import Monitoring from "@/components/engineeringSolutionsPage/monitoring/Monitoring";
 import DryIce from "@/components/engineeringSolutionsPage/dryIce/DryIce";
+import Cta from "@/components/engineeringSolutionsPage/cta/Cta";
 
 export default function EngineeringSolutions() {
   return (
@@ -12,6 +13,7 @@ export default function EngineeringSolutions() {
       <Processing />
       <Monitoring />
       <DryIce />
+      <Cta />
     </>
   );
 }
