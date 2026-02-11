@@ -2,7 +2,7 @@ import Container from "@/components/shared/container/Container";
 import MainButton from "@/components/shared/buttons/MainButton";
 import PageTitle from "@/components/shared/titles/PageTitle";
 import Image from "next/image";
-import Badges from "./badge/Badges";
+import Badges from "./Badges";
 import Link from "next/link";
 import HeroSlider from "./slider/HeroSlider";
 
