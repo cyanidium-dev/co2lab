@@ -1,13 +1,14 @@
 import Container from "@/components/shared/container/Container";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
 import Image from "next/image";
+import CriogenicTanksList from "./CriogenicTanksList";
 
 export default function CriogenicTanks() {
   return (
     <section className="py-12 lg:pt-[142px] lg:pb-0">
       <Container>
         <div className="flex flex-col sm:flex-row-reverse sm:items-center gap-8 mb-8 lg:mb-12">
-          <div className="sm:w-[calc(50%-16px)] ">
+          <div className="sm:w-[calc(50%-16px)]">
             <SectionTitle className="mb-3 lg:mb-4.5 lg:text-[44px] xl:text-[48px]">
               Cryogenic Tanks and Equipment from CO₂ Lab
             </SectionTitle>
@@ -30,6 +31,8 @@ export default function CriogenicTanks() {
             />
           </div>
         </div>
+
+        <CriogenicTanksList />
       </Container>
     </section>
   );
