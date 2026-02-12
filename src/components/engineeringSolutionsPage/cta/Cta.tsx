@@ -8,7 +8,7 @@ export default function Cta() {
     <section className="pt-12 pb-24 lg:pt-[127px] lg:pb-[108px] text-white">
       <Container className="relative">
         <Image
-          src="/images/engineeringSolutionsPage/cta/bgMob.svg"
+          src="/images/cta/bgMob.svg"
           alt=""
           width={200}
           height={240}
@@ -16,7 +16,7 @@ export default function Cta() {
           aria-hidden
         />
         <Image
-          src="/images/engineeringSolutionsPage/cta/bgDesk.svg"
+          src="/images/cta/bgDesk.svg"
           alt=""
           width={320}
           height={380}
