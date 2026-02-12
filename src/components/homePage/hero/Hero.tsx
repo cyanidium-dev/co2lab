@@ -51,7 +51,7 @@ export default function Hero() {
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div
-            className="absolute inset-0 z-10 rounded-[18px] bg-gradient-to-t from-black/60 via-transparent to-transparent"
+            className="lg:hidden absolute inset-0 z-10 rounded-[18px] bg-[linear-gradient(176.8deg,rgba(0,0,0,0)_59.28%,rgba(0,0,0,0.6)_79.3%)]"
             aria-hidden
           />
           <div className="absolute inset-0 z-20 rounded-[18px]">
