@@ -1,5 +1,9 @@
-import EquipmentAndSystemsPage from "@/components/equipmentAndSystemsPage/EquipmentAndSystemsPage";
+import Hero from "@/components/equipmentAndSystemsPage/hero/Hero";
 
 export default function EquipmentAndSystems() {
-    return <EquipmentAndSystemsPage />;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
