@@ -6,7 +6,7 @@ const slideInTransition = {
   ease: "easeInOut" as const,
 };
 
-const viewport = { once: true, margin: "-60px 0px" };
+const viewport = { once: true, margin: "-120px 0px" };
 
 const slideEnd = { opacity: 1, x: 0, scale: 1 };
 
@@ -19,34 +19,40 @@ const initialScales = [0.9, 0.85, 0.8];
 // Мобілка: перша 142×142, друга 212×331, третя 99×106. lg — розміри з SVG.
 const benefitCards = [
   {
-    id: "sustainable-tech",
-    title: "Sustainable tech adoption",
-    image: "/images/homePage/benefits/imageTwo.svg",
-    imageWidth: 291,
-    imageHeight: 291,
+    id: "flexible-pricing-models",
+    title: "Flexible pricing models",
+    description:
+      "Pricing adapted to market conditions, contract duration, and customer-specific supply needs.",
+    image: "/images/supplyPage/benefits/imageTwo.svg",
+    imageWidth: 106,
+    imageHeight: 106,
     imageFirst: true,
-    imageMobClass: "lg:-mt-14 w-[142px] h-[142px]",
-    imageLgClass: "lg:w-[291px] lg:h-[291px]",
+    imageMobClass: "mb-6 lg:mb-[62px] w-20 h-20",
+    imageLgClass: "lg:w-[106px] lg:h-[106px]",
   },
   {
-    id: "certified-quality",
-    title: "Certified quality",
-    image: "/images/homePage/benefits/imageThree.svg",
-    imageWidth: 194,
-    imageHeight: 194,
+    id: "long-term-supply-agreements",
+    title: "Long-term supply agreements",
+    description:
+      "Structured CO₂ supply contracts with fixed volumes, delivery schedules, and predictable planning.",
+    image: "/images/supplyPage/benefits/imageThree.svg",
+    imageWidth: 133,
+    imageHeight: 127,
     imageFirst: false,
-    imageMobClass: "mt-7.5 w-[116px] h-auto",
-    imageLgClass: "lg:w-[194px] lg:h-[194px]",
+    imageMobClass: "mt-2.5 lg:mt-8 w-[97px] h-auto",
+    imageLgClass: "lg:w-[133px] lg:h-[127px]",
   },
   {
-    id: "co2-monetization",
-    title: "CO₂ monetization",
-    image: "/images/homePage/benefits/ImageFour.svg",
-    imageWidth: 159,
-    imageHeight: 171,
+    id: "guaranteed-volumes-and-supply-stability",
+    title: "Guaranteed volumes and supply stability",
+    description:
+      "Secured CO₂ availability to ensure uninterrupted operations and long-term production reliability.",
+    image: "/images/supplyPage/benefits/imageFour.svg",
+    imageWidth: 106,
+    imageHeight: 106,
     imageFirst: true,
-    imageMobClass: "mb-7.5 w-[99px] h-[106px]",
-    imageLgClass: "lg:w-[150px] xl:w-[159px] lg:h-auto",
+    imageMobClass: "mb-3 lg:mb-[46px] w-20 h-20",
+    imageLgClass: "lg:w-[106px] lg:h-[106px]",
   },
 ] as const;
 
@@ -109,14 +115,20 @@ export default function BenefitsList() {
                 height={item.imageHeight}
                 className={`shrink-0 object-contain ${item.imageMobClass} ${item.imageLgClass}`}
               />
-              <p className="max-w-[130px] text-[16px] font-medium uppercase leading-[130%] lg:max-w-[246px] lg:text-[20px] xl:text-[24px] text-center">
+              <p className="max-w-[120px] lg:max-w-[180px] mb-2 lg:mb-4 text-[16px] font-medium uppercase leading-[130%] xl:max-w-[227px] lg:text-[20px] xl:text-[24px] text-center">
                 {item.title}
+              </p>
+              <p className="max-w-[120px] lg:max-w-[180px] xl:max-w-[227px] text-[10px] lg:text-[14px] font-light leading-[120%]">
+                {item.description}
               </p>
             </>
           ) : (
             <>
-              <p className="max-w-[130px] text-[16px] font-medium uppercase leading-[130%] lg:max-w-[246px] lg:text-[20px] xl:text-[24px] text-center">
+              <p className="max-w-[120px] lg:max-w-[180px] mb-2 lg:mb-4 text-[16px] font-medium uppercase leading-[130%] xl:max-w-[227px] lg:text-[20px] xl:text-[24px] text-center">
                 {item.title}
+              </p>
+              <p className="max-w-[120px] lg:max-w-[180px] xl:max-w-[227px] text-[10px] lg:text-[14px] font-light leading-[120%]">
+                {item.description}
               </p>
               <Image
                 src={item.image}
