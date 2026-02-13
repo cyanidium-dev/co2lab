@@ -24,7 +24,7 @@ export default function Hero() {
           </p>
           <MainButton
             variant="white"
-            className="sm:max-w-[288px] mx-auto lg:mx-0"
+            className="xs:max-w-[288px] mx-auto lg:mx-0"
           >
             Explore technologies
           </MainButton>
