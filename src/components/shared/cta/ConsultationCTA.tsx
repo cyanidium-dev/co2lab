@@ -23,7 +23,7 @@ export default function ConsultationCTA() {
           className="absolute -top-24 right-12 -z-20 pointer-events-none hidden md:block w-auto h-auto"
           aria-hidden
         />
-        <div className="relative px-3 lg:px-12 pt-8 pb-[178px] lg:py-[95px] rounded-[18px] overflow-hidden">
+        <div className="relative px-3 lg:px-12 pt-8 pb-[178px] sm:pb-15 lg:py-[95px] rounded-[18px] overflow-hidden">
           <Image
             src="/images/cta/consultation.webp"
             alt="Cta"
