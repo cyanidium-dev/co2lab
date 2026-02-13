@@ -27,7 +27,7 @@ export default function Header() {
   });
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 py-4 lg:py-11">
+    <header className="fixed left-0 right-0 top-0 z-50 py-2 lg:py-9">
       <Container className="relative z-10 flex items-center justify-between rounded-full lg:justify-start lg:gap-[228px]">
         {scrollPosition > 20 && (
           <>
@@ -50,7 +50,7 @@ export default function Header() {
             />
           </>
         )}
-        <div className={`relative  ${whiteLogoOnLg ? "lg:ml-7" : ""}`}>
+        <div className={`relative py-2 ${whiteLogoOnLg ? "lg:ml-7" : ""}`}>
           <LogoLink
             onNavigate={() => setIsOpenBurgerMenu(false)}
             className={

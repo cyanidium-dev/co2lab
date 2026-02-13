@@ -1,10 +1,8 @@
 import Container from "@/components/shared/container/Container";
 import Image from "next/image";
-import Link from "next/link";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
-import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 
-const technologies = [
+const distribution = [
   {
     title: "Own logistics infrastructure",
     description:
@@ -31,7 +29,7 @@ const technologies = [
 
 export default function Distribution() {
   return (
-    <section className="py-12 lg:pt-[136px] lg:pb-24 relative">
+    <section className="py-12 lg:pt-[136px] lg:pb-0 relative">
       <Container className="relative">
         <Image
           src="/images/engineeringSolutionsPage/technologies/bgMobile.svg"
@@ -64,7 +62,7 @@ export default function Distribution() {
             </p>
           </li>
 
-          {technologies.map((item, idx) => (
+          {distribution.map((item, idx) => (
             <li
               key={idx}
               className={`md:w-[calc(50%-10px)] md:h-auto ${
