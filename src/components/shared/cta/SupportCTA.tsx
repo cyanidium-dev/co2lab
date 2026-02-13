@@ -12,7 +12,7 @@ export default function SupportCTA() {
           alt=""
           width={200}
           height={240}
-          className="absolute -top-12 right-9 -z-20 pointer-events-none md:hidden w-auto h-auto"
+          className="absolute -top-12 right-9 -z-20 pointer-events-none lg:hidden w-auto h-auto"
           aria-hidden
         />
         <Image
@@ -20,7 +20,7 @@ export default function SupportCTA() {
           alt=""
           width={320}
           height={380}
-          className="absolute -top-24 right-12 -z-20 pointer-events-none hidden md:block w-auto h-auto"
+          className="absolute -top-24 right-12 -z-20 pointer-events-none hidden lg:block w-auto h-auto"
           aria-hidden
         />
         <div className="relative px-3 lg:px-12 pt-8 pb-[178px] sm:pb-8 lg:py-[95px] rounded-[18px] overflow-hidden">
