@@ -3,7 +3,7 @@ import Container from "@/components/shared/container/Container";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
 import Image from "next/image";
 
-export default function Cta() {
+export default function ConsultationCTA() {
   return (
     <section className="pt-12 pb-24 lg:pt-[127px] lg:pb-[108px] text-white">
       <Container className="relative">
@@ -25,14 +25,14 @@ export default function Cta() {
         />
         <div className="relative px-3 lg:px-12 pt-8 pb-[178px] lg:py-[95px] rounded-[18px] overflow-hidden">
           <Image
-            src="/images/engineeringSolutionsPage/cta/cta.webp"
+            src="/images/cta/consultation.webp"
             alt="Cta"
             fill
             className="object-cover -z-20"
           />
 
           <Image
-            src="/images/engineeringSolutionsPage/cta/smokeMob.webp"
+            src="/images/cta/smokeMob.webp"
             alt=""
             width={338}
             height={524}
@@ -40,7 +40,7 @@ export default function Cta() {
             aria-hidden
           />
           <Image
-            src="/images/engineeringSolutionsPage/cta/smokeDesk.webp"
+            src="/images/cta/smokeDesk.webp"
             alt=""
             width={636}
             height={436}

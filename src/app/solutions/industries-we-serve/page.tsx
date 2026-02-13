@@ -1,5 +1,9 @@
-import IndustriesWeServePage from "@/components/industriesWeServePage/IndustriesWeServePage";
+import SupportCTA from "@/components/shared/cta/SupportCTA";
 
 export default function IndustriesWeServe() {
-    return <IndustriesWeServePage />;
+  return (
+    <>
+      <SupportCTA />
+    </>
+  );
 }
