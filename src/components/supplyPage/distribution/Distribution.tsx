@@ -6,29 +6,30 @@ import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 
 const technologies = [
   {
-    title: "Equipment & modular CO₂ systems",
-    href: "/solutions/equipment-and-systems",
-    image: "/images/engineeringSolutionsPage/technologies/second.webp",
-    imageAlt: "Equipment and modular CO₂ systems",
+    title: "Own logistics infrastructure",
+    description:
+      "Pricing adapted to market conditions, contract duration, and customer-specific supply needs.",
+    image: "/images/supplyPage/distribution/imageOne.webp",
+    imageAlt: "Own logistics infrastructure",
     dark: true,
   },
   {
-    title: "Full-cycle CO₂ production and supply",
-    href: "/supply",
-    image: "/images/engineeringSolutionsPage/technologies/first.webp",
-    imageAlt: "Full-cycle CO₂ production and supply",
+    title: "Cold chain compliance",
+    description: "Stable temperature from production to destination.",
+    image: "/images/supplyPage/distribution/imageTwo.webp",
+    imageAlt: "Cold chain compliance",
     dark: false,
   },
   {
-    title: "Helping businesses optimize processes",
-    href: "/solutions/industries-we-serve",
-    image: "/images/engineeringSolutionsPage/technologies/third.webp",
-    imageAlt: "Helping businesses optimize processes",
+    title: "Reliable delivery",
+    description: "Planned routes and predictable lead times.",
+    image: "/images/supplyPage/distribution/imageThree.webp",
+    imageAlt: "Reliable delivery",
     dark: true,
   },
 ];
 
-export default function Technologies() {
+export default function Distribution() {
   return (
     <section className="py-12 lg:pt-[136px] lg:pb-24 relative">
       <Container className="relative">
@@ -54,18 +55,18 @@ export default function Technologies() {
             className="pb-4 md:w-[calc(50%-10px)] md:order-1 md:my-auto"
           >
             <SectionTitle className="mb-3 lg:mb-6 lg:text-[44px] xl:text-[48px]">
-              <span className="block">CO₂ Capture</span>
-              <span className="block pl-[114px]">& upgrading</span>
+              <span className="block">Distribution</span>
+              <span className="block pl-[114px]">& Transport</span>
             </SectionTitle>
             <p className="lg:max-w-[460px]">
-              Advanced technologies for efficient and sustainable CO₂ recovery
-              from any source.
+              We manage our own logistics infrastructure to ensure safe,
+              reliable, and on-time delivery of CO₂ and dry ice across regions.
             </p>
           </li>
 
           {technologies.map((item, idx) => (
             <li
-              key={item.href}
+              key={idx}
               className={`md:w-[calc(50%-10px)] md:h-auto ${
                 idx === 0
                   ? "md:order-2"
@@ -74,26 +75,22 @@ export default function Technologies() {
                     : "md:order-3"
               }`}
             >
-              <Link
-                href={item.href}
-                className={`group flex gap-3 md:items-center md:h-full p-4 lg:p-3 justify-between transition-opacity xl:hover:opacity-95 focus-visible:opacity-95 outline-none rounded-[20px] overflow-hidden ${
+              <div
+                className={`group flex gap-4 lg:gap-11 items-center md:h-full p-4 lg:py-3 pl-4 pr-3 justify-between rounded-[20px] overflow-hidden ${
                   item.dark
                     ? "bg-black text-white"
                     : "bg-white text-black border border-black"
                 }`}
               >
                 <div>
-                  <h3 className="lg:max-w-[219px] text-[20px] lg:text-[24px] font-semibold leading-[120%] uppercase mb-4 lg:mb-6">
+                  <h3 className="lg:max-w-[219px] text-[16px] lg:text-[24px] font-semibold leading-[120%] uppercase mb-4 lg:mb-6">
                     {item.title}
                   </h3>
-                  <SecondaryButton
-                    variant={item.dark ? "white" : "black"}
-                    className="h-10 lg:h-10"
-                  >
-                    Read more
-                  </SecondaryButton>
+                  <p className="text-[10px] lg:text-[14px] font-light leading-[120%]">
+                    {item.description}
+                  </p>
                 </div>
-                <div className="relative rounded-[12px] shrink-0 lg:h-full w-[117px] lg:w-[187px] xl:w-[280px] md:min-h-[117px] lg:min-h-[228px] overflow-hidden">
+                <div className="relative rounded-[12px] shrink-0 lg:h-full w-[129px] lg:w-[187px] xl:w-[280px] min-h-[124px] lg:min-h-[228px] overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
@@ -102,7 +99,7 @@ export default function Technologies() {
                     sizes="(max-width: 1023px) 100vw, 38vw"
                   />
                 </div>
-              </Link>
+              </div>
             </li>
           ))}
         </ul>
