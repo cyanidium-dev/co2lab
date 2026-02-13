@@ -1,7 +1,6 @@
 import Container from "@/components/shared/container/Container";
 import Image from "next/image";
 import Link from "next/link";
-import ArrowIcon from "@/components/shared/icons/ArrowIcon";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
 import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 
