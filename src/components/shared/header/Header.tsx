@@ -50,7 +50,7 @@ export default function Header() {
             />
           </>
         )}
-        <div className={`relative py-2 ${whiteLogoOnLg ? "lg:ml-7" : ""}`}>
+        <div className={`relative  ${whiteLogoOnLg ? "lg:ml-7" : ""}`}>
           <LogoLink
             onNavigate={() => setIsOpenBurgerMenu(false)}
             className={
