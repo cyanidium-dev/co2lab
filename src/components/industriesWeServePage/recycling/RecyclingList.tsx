@@ -27,7 +27,7 @@ const cards = [
 
 export default function RecyclingList() {
   return (
-    <ul className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+    <ul className="flex flex-col gap-3 sm:flex-row sm:flex-wrap mt-8 lg:mt-11">
       {cards.map((card, idx) => (
         <li
           key={card.title}
