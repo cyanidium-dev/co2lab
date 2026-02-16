@@ -8,8 +8,8 @@ export default function Hero() {
   return (
     <section className="pt-22 pb-4 lg:pt-8 lg:pb-0">
       <Container className="flex flex-col gap-4 lg:flex-row lg:gap-8">
-        <div className="lg:w-[calc(50%-16px)] lg:pt-30 lg:pb-10">
-          <PageTitle className="mb-3 lg:mb-5.5 max-w-[160px]">
+        <div className="lg:w-[calc(50%-16px)] lg:pt-[151px] lg:pb-10">
+          <PageTitle className="mb-3 lg:mb-5.5 max-w-40 lg:max-w-[302px]">
             About CO₂ Lab
           </PageTitle>
           <p className="mb-4 lg:mb-10">
@@ -22,9 +22,9 @@ export default function Hero() {
             Contact Us
           </MainButton>
 
-          <Badges className="hidden lg:flex lg:max-w-[335px]" />
+          <Badges className="hidden lg:flex lg:max-w-[387px]" />
         </div>
-        <div className="relative w-full overflow-hidden lg:w-[calc(50%-16px)] min-h-[305px] lg:min-h-[420px] rounded-[18px]">
+        <div className="relative w-full overflow-hidden lg:w-[calc(50%-16px)] min-h-[305px] sm:min-h-[380px] lg:min-h-[420px] rounded-[18px]">
           <Image
             src="/images/homePage/hero/bgMobile.svg"
             alt=""
