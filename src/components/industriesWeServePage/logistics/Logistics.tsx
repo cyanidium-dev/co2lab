@@ -5,9 +5,33 @@ import Image from "next/image";
 export default function Logistics() {
   return (
     <section className="py-12 lg:pt-30 lg:pb-0 text-white">
-      <div className="rounded-[28px] bg-black">
+      <div className="relative rounded-[28px] bg-black overflow-hidden">
         <Container>
-          <div className="py-8 lg:py-10.5">
+          <div className="relative py-8 lg:py-10.5">
+            <Image
+              src="/images/industriesWeServePage/logistics/bgLeftDesk.svg"
+              alt="background"
+              aria-hidden
+              className="absolute right-[410px] top-12 object-cover pointer-events-none hidden lg:block"
+              width="328"
+              height="285"
+            />
+            <Image
+              src="/images/industriesWeServePage/logistics/bgRightDesk.svg"
+              alt="background"
+              aria-hidden
+              className="absolute right-[-110px] top-14 object-cover pointer-events-none hidden lg:block"
+              width="290"
+              height="322"
+            />
+            <Image
+              src="/images/industriesWeServePage/logistics/bgMob.svg"
+              alt="background"
+              aria-hidden
+              className="absolute top-7 -right-6 object-cover pointer-events-none lg:hidden"
+              width={188}
+              height={158}
+            />
             <SectionTitle className="mb-3 lg:mb-6">
               Logistics & Cold Chain
             </SectionTitle>
@@ -15,7 +39,7 @@ export default function Logistics() {
               CO₂ utilization and recycling solutions for environmental
               applications.
             </p>
-            <div className="flex flex-col gap-3">
+            <div className="relative z-10 flex flex-col gap-3">
               <div className="flex flex-col lg:flex-row gap-3">
                 <div className="flex flex-col sm:flex-row gap-3 lg:w-[calc(50%-6px)]">
                   <div className="sm:w-[calc(50%-6px)] min-h-[152px] px-6 py-7 bg-white rounded-[12px]">
