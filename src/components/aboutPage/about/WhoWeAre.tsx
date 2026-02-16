@@ -5,7 +5,23 @@ import Image from "next/image";
 export default function WhoWeAre() {
   return (
     <section className="py-12 lg:pt-30 lg:pb-0">
-      <Container className="flex flex-col md:flex-row-reverse md:items-center gap-8 md:gap-5">
+      <Container className="relative flex flex-col md:flex-row-reverse md:items-center gap-8 md:gap-5">
+        <Image
+          src="/images/aboutPage/whoWeAre/bgMob.svg"
+          alt=""
+          aria-hidden
+          className="absolute -z-10 -top-65 xs:-top-52 sm:-top-39 -right-6 pointer-events-none lg:hidden"
+          width="208"
+          height="213"
+        />
+        <Image
+          src="/images/aboutPage/whoWeAre/bgDesk.svg"
+          alt=""
+          aria-hidden
+          className="absolute -z-10 -top-30 -right-10 pointer-events-none hidden lg:block"
+          width="312"
+          height="319"
+        />
         <div className="md:w-[calc(50%-10px)]">
           <SectionTitle className="mb-3 lg:mb-4.5">Who We Are?</SectionTitle>
           <p>
@@ -16,7 +32,7 @@ export default function WhoWeAre() {
             achieving sustainable outcomes.
           </p>
         </div>
-        <div className="relative rounded-[18px] md:w-[calc(50%-10px)] h-[158px] md:h-auto lg:min-h-[288px] overflow-hidden">
+        <div className="relative rounded-[18px] md:w-[calc(50%-10px)] h-[158px] md:h-auto md:min-h-[208px] lg:min-h-[288px] overflow-hidden">
           <Image
             src="/images/aboutPage/whoWeAre/whoWeAre.webp"
             alt="Who We Are?"
