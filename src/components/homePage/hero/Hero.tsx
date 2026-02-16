@@ -22,9 +22,9 @@ export default function Hero() {
               Explore Solutions
             </MainButton>
           </Link>
-          <Badges className="hidden lg:flex lg:max-w-[335px]" />
+          <Badges className="hidden lg:flex max-w-[335px]" />
         </div>
-        <div className="relative w-full overflow-hidden lg:w-[calc(50%-16px)] min-h-[305px] lg:min-h-[420px] rounded-[18px]">
+        <div className="relative w-full lg:w-[calc(50%-16px)] min-h-[305px] lg:min-h-[420px] rounded-[18px]">
           <Image
             src="/images/homePage/hero/bgMobile.svg"
             alt=""

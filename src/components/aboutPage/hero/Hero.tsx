@@ -24,10 +24,10 @@ export default function Hero() {
 
           <Badges className="hidden lg:flex lg:max-w-[387px]" />
         </div>
-        <div className="relative w-full overflow-hidden lg:w-[calc(50%-16px)] min-h-[305px] sm:min-h-[380px] lg:min-h-[420px] rounded-[18px]">
+        <div className="relative w-full lg:w-[calc(50%-16px)] min-h-[305px] sm:min-h-[380px] lg:min-h-[420px] rounded-[18px]">
           <Image
             src="/images/homePage/hero/bgMobile.svg"
-            alt=""
+            alt="background image"
             width={152}
             height={190}
             className="absolute -z-10 right-[-41px] top-[-74px] lg:hidden"
@@ -35,7 +35,7 @@ export default function Hero() {
           />
           <Image
             src="/images/homePage/hero/bgDesk.svg"
-            alt=""
+            alt="background image"
             width={269}
             height={338}
             className="absolute -z-10 bottom-[-163px] left-[-164px] hidden lg:block"
@@ -43,7 +43,7 @@ export default function Hero() {
           />
           <Image
             src="/images/aboutPage/hero/hero.webp"
-            alt=""
+            alt="hero image"
             fill
             priority
             fetchPriority="high"
