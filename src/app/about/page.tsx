@@ -1,5 +1,9 @@
-import AboutPage from "@/components/aboutPage/AboutPage";
+import Hero from "@/components/aboutPage/hero/Hero";
 
 export default function About() {
-    return <AboutPage />;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }

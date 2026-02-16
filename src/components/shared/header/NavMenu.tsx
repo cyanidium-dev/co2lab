@@ -96,7 +96,7 @@ export default function NavMenu() {
   return (
     <nav
       ref={navRef}
-      className="hidden md:flex relative p-2 rounded-full bg-[linear-gradient(90.95deg,rgba(231,231,231,0.8)_52.25%,rgba(255,255,255,0.8)_99.18%)] shadow-[inset_0px_4px_12.6px_0px_rgba(255,255,255,0.25)] backdrop-blur-[10px]"
+      className="hidden md:flex relative my-2 p-2 rounded-full bg-[linear-gradient(90.95deg,rgba(231,231,231,0.8)_52.25%,rgba(255,255,255,0.8)_99.18%)] shadow-[inset_0px_4px_12.6px_0px_rgba(255,255,255,0.25)] backdrop-blur-[10px]"
     >
       <div
         className="absolute inset-0 rounded-full pointer-events-none"
