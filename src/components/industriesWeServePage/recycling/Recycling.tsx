@@ -17,10 +17,26 @@ const slideEnd = { opacity: 1, x: 0 };
 
 export default function Recycling() {
   return (
-    <section className="py-12 lg:pt-30 lg:pb-0 overflow-x-hidden">
+    <section className="py-12 lg:pt-30 lg:pb-0">
       <div className="flex flex-col gap-1">
         {/* Ряд 1: текст завжди видимий, права картинка повна у видимій частині, уходить за екран, скруглення видно */}
-        <Container className="flex w-full justify-start items-center overflow-x-visible">
+        <Container className="relative flex w-full justify-start items-center overflow-x-visible">
+          <Image
+            src="/images/industriesWeServePage/recycling/bgTopMob.svg"
+            alt=""
+            aria-hidden
+            className="absolute top-[-92px] -left-4 pointer-events-none lg:hidden"
+            width="161"
+            height="147"
+          />
+          <Image
+            src="/images/industriesWeServePage/recycling/bgTopDesk.svg"
+            alt=""
+            aria-hidden
+            className="absolute -z-10 top-[-157px] -left-2 pointer-events-none hidden lg:block"
+            width="287"
+            height="261"
+          />
           <div className="flex min-w-max flex-nowrap items-center gap-4 lg:gap-[43px]">
             <div className="shrink-0">
               <SectionTitle>Environmental</SectionTitle>
