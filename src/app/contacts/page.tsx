@@ -1,5 +1,9 @@
-import ContactsPage from "@/components/contactsPage/ContactsPage";
+import Hero from "@/components/contactsPage/hero/Hero";
 
 export default function Contacts() {
-    return <ContactsPage />;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }

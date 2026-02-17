@@ -1,4 +1,4 @@
-import { contacts } from "@/constants/contacts";
+import { contacts } from "@/constants/contact";
 
 const contactItems: Array<{
   label: string;
@@ -29,7 +29,7 @@ export default function ContactsBlock() {
           {href !== undefined ? (
             <a
               href={href || "#"}
-              className="text-[14px] font-medium leading-[120%] hover:opacity-80 transition-opacity duration-300 ease-in-out block"
+              className="text-[14px] font-medium leading-[120%] xl:hover:opacity-80 transition-opacity duration-300 ease-in-out block"
             >
               {value}
             </a>
