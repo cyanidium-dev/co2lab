@@ -76,10 +76,10 @@ export default function CustomizedInput({
             const commonProps = {
               id: inputId,
               className: twMerge(
-                "relative w-full px-4 py-3 lg:p-4 h-[39px] lg:h-[49px] rounded-full text-[12px] lg:text-[14px] leading-[120%] font-normal outline-none resize-none border transition duration-300 ease-out",
+                "relative w-full px-4 py-3 lg:p-4 h-12 lg:h-[54px] rounded-full text-[12px] lg:text-[14px] leading-[120%] font-light outline-none resize-none border border-black/40 text-black placeholder:text-black/40 transition duration-300 ease-out",
                 fieldClassName,
                 hasError
-                  ? "border-accent text-accent placeholder:text-accent/40"
+                  ? "border-text-red-500 text-text-red-500 placeholder:text-red-500/40"
                   : "border-black/40 text-black placeholder:text-black/40",
                 icon ? "pl-[50px] lg:pl-[50px]" : "",
                 hasClearButton ? "pr-12 lg:pr-12" : "",
@@ -92,7 +92,7 @@ export default function CustomizedInput({
                   <div
                     className={clsx(
                       "absolute top-3 left-4 z-10 transition-colors",
-                      hasError ? "text-accent" : "text-black",
+                      hasError ? "text-red-500" : "text-black",
                     )}
                   >
                     {icon}
@@ -103,7 +103,7 @@ export default function CustomizedInput({
                   <PhoneInput
                     international
                     countryCallingCodeEditable={false}
-                    country="DK"
+                    country="UA"
                     defaultCountry="UA"
                     autoComplete="on"
                     {...field}
@@ -116,8 +116,8 @@ export default function CustomizedInput({
                       arrowComponent: () => (
                         <ShevronIcon
                           className={clsx(
-                            "size-6",
-                            hasError ? "text-accent" : "text-black",
+                            "size-4",
+                            hasError ? "text-red-500" : "text-black",
                           )}
                         />
                       ),
@@ -146,7 +146,7 @@ export default function CustomizedInput({
       <ErrorMessage
         name={fieldName}
         component="p"
-        className="absolute bottom-[-12px] left-4 text-[8px] lg:text-[10px] lg:bottom-[-14px] font-light leading-[120%] text-accent truncate"
+        className="absolute bottom-[-12px] left-4 text-[8px] lg:text-[10px] lg:bottom-[-14px] font-light leading-[120%] text-red-500 truncate"
       />
     </label>
   );

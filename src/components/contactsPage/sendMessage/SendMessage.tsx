@@ -1,5 +1,6 @@
 import Container from "@/components/shared/container/Container";
 import Image from "next/image";
+import ContactFormWithNotifications from "./ContactFormWithNotifications";
 
 export default function SendMessage() {
   return (
@@ -12,6 +13,10 @@ export default function SendMessage() {
             fill
             className="object-cover"
           />
+        </div>
+        <div className="w-full sm:w-[calc(50%-10px)]">
+          {" "}
+          <ContactFormWithNotifications />
         </div>
       </Container>
     </section>

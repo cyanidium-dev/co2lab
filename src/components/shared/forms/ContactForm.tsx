@@ -11,7 +11,10 @@ import SectionTitle from "../titles/SectionTitle";
 
 interface ContactFormValues {
   name: string;
+  company: string;
   phone: string;
+  email: string;
+  message: string;
 }
 
 interface ContactFormProps {
@@ -33,7 +36,10 @@ export default function ContactForm({
 
   const initialValues: ContactFormValues = {
     name: "",
+    company: "",
     phone: "",
+    email: "",
+    message: "",
   };
 
   const submitForm = async (
@@ -88,10 +94,18 @@ export default function ContactForm({
           <Form>
             <div className="flex flex-col gap-4 mb-6">
               <CustomizedInput fieldName="name" placeholder="Full name*" />
+              <CustomizedInput fieldName="company" placeholder="Company name" />
               <CustomizedInput
                 fieldName="phone"
                 inputType="tel"
                 fieldClassName="px-6 py-0 lg:py-0"
+              />
+              <CustomizedInput fieldName="email" placeholder="Email address" />
+              <CustomizedInput
+                fieldName="message"
+                placeholder="Message"
+                as="textarea"
+                fieldClassName="h-30 lg:h-[172px] p-4 rounded-[24px]"
               />
             </div>
             <div>
@@ -100,7 +114,7 @@ export default function ContactForm({
                 disabled={!(dirty && isValid) || isLoading}
                 isLoading={isLoading}
                 loadingText="Sending..."
-                className="w-full h-[48px]"
+                className="w-full sm:max-w-[288px] ml-auto"
               >
                 Send Request
               </MainButton>
