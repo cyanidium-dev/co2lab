@@ -8,6 +8,7 @@ import {
 import InstagramIcon from "@/components/shared/icons/InstagramIcon";
 import LinkedInIcon from "@/components/shared/icons/LinkedInIcon";
 import YouTubeIcon from "@/components/shared/icons/YouTubeIcon";
+import { twMerge } from "tailwind-merge";
 
 const socialLinks = [
   { name: "Instagram", href: SOCIAL_LINK_INSTAGRAM, Icon: InstagramIcon },
@@ -15,15 +16,21 @@ const socialLinks = [
   { name: "YouTube", href: SOCIAL_LINK_YOUTUBE, Icon: YouTubeIcon },
 ];
 
-export default function ContactDetails() {
+type ContactDetailsProps = {
+  className?: string;
+};
+
+export default function ContactDetails({
+  className = "",
+}: ContactDetailsProps) {
   return (
-    <div>
+    <div className={twMerge(className)}>
       <h2 className="mb-6 text-[20px] lg:text-[24px] font-semibold uppercase leading-[120%]">
         Contact Details:
       </h2>
       <div className="mb-8 lg:mb-12 flex flex-col gap-3 text-[14px] lg:text-[16px] font-light leading-[120%]">
-        <p>
-          <span className="font-medium"> Email: </span>
+        <p className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4">
+          <span className="lg:w-40 font-medium"> Email: </span>
           <a
             href={`mailto:${CONTACT_EMAIL_REQUEST}`}
             className="xl:hover:opacity-60 focus-visible:opacity-60 transition duration-300 ease-in-out"
@@ -31,8 +38,8 @@ export default function ContactDetails() {
             {CONTACT_EMAIL_REQUEST}
           </a>
         </p>
-        <p>
-          <span className="font-medium"> Phone: </span>
+        <p className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4">
+          <span className="lg:w-40 font-medium"> Phone: </span>
           <a
             href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}
             className="xl:hover:opacity-60 focus-visible:opacity-60 transition duration-300 ease-in-out"
@@ -41,7 +48,7 @@ export default function ContactDetails() {
           </a>
         </p>
       </div>
-      <div className="flex flex-wrap gap-2.5 lg:gap-4">
+      <div className="flex flex-wrap gap-2 lg:gap-4">
         {socialLinks.map((item) => (
           <a
             key={item.name}

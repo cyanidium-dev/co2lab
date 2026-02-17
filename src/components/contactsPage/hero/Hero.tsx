@@ -15,7 +15,7 @@ export default function Hero() {
             Get in touch with CO₂ Lab to discuss your project, supply needs, or
             technical requirements.
           </p>
-          <ContactDetails />
+          <ContactDetails className="hidden lg:block" />
         </div>
         <div className="relative w-full lg:w-[calc(50%-16px)] min-h-[305px] sm:min-h-[380px] lg:min-h-[420px] rounded-[18px]">
           <Image
@@ -48,6 +48,7 @@ export default function Hero() {
             aria-hidden
           />
         </div>
+        <ContactDetails className="lg:hidden" />
       </Container>
     </section>
   );

@@ -10,7 +10,7 @@ export default function YouTubeIcon({ className = "" }: YouTubeIconProps) {
       viewBox="0 0 43 43"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`shrink-0 ${className}`.trim()}
+      className={`shrink-0 size-8 lg:size-[43px] ${className}`.trim()}
       aria-hidden
     >
       <path d="M24.9938 21.5L19.35 18.275V24.725L24.9938 21.5Z" fill="white" />
