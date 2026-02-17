@@ -23,7 +23,7 @@ export default function Hero() {
             alt="background image"
             width={152}
             height={190}
-            className="absolute -z-10 right-[-41px] top-[-74px] lg:hidden"
+            className="absolute -z-10 right-[-41px] top-[397px] lg:hidden"
             aria-hidden
           />
           <Image
@@ -48,7 +48,7 @@ export default function Hero() {
             aria-hidden
           />
         </div>
-        <ContactDetails className="lg:hidden" />
+        <ContactDetails className="lg:hidden mt-12" />
       </Container>
     </section>
   );
