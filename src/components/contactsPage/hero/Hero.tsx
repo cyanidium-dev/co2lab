@@ -11,7 +11,7 @@ export default function Hero() {
           <PageTitle className="mb-3 lg:mb-5.5 max-w-40 lg:max-w-[302px]">
             Contacts
           </PageTitle>
-          <p className="mb-4 lg:mb-10">
+          <p className="mb-4 lg:mb-[85px]">
             Get in touch with CO₂ Lab to discuss your project, supply needs, or
             technical requirements.
           </p>
