@@ -53,3 +53,10 @@
     padding: 0;
   }
 }
+
+@layer utilities {
+  .popup-scroll::-webkit-scrollbar-track {
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
+}
