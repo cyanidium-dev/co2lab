@@ -1,7 +1,7 @@
 "use client";
 
 import ContactForm from "@/components/shared/forms/ContactForm";
-// import NotificationPopUp from "@/components/shared/notifications/NotificationPopUp";
+import NotificationPopUp from "@/components/shared/notifications/NotificationPopUp";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
 import { useState } from "react";
 
@@ -15,12 +15,16 @@ export default function ContactFormWithNotifications() {
         setIsError={setIsError}
         setIsNotificationShown={setIsNotificationShown}
       />
-      {/* <NotificationPopUp
-        title={isError ? t("errorTitle") : t("successTitle")}
-        description={isError ? t("errorDescription") : t("successDescription")}
+      <NotificationPopUp
+        title={isError ? "Something went wrong" : "Your message has been sent"}
+        description={
+          isError
+            ? "Try submitting the form later."
+            : "We have received your message and will get back to you shortly."
+        }
         isPopUpShown={isNotificationShown}
         setIsPopUpShown={setIsNotificationShown}
-      /> */}
+      />
       <Backdrop
         isVisible={isNotificationShown}
         onClick={() => {
