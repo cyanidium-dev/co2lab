@@ -1,5 +1,6 @@
 import Container from "@/components/shared/container/Container";
 import PageTitle from "../shared/titles/PageTitle";
+import { CONTACT_EMAIL } from "@/constants/contact";
 
 const sections = [
   {
@@ -91,7 +92,15 @@ const sections = [
           If you have questions regarding this Privacy Policy, please contact us
           at:
         </p>
-        <p>Email: info@co2lab.pro</p>
+        <p>
+          Email:{" "}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="underline hover:no-underline focus:outline-none focus:underline"
+          >
+            {CONTACT_EMAIL}
+          </a>
+        </p>
       </>
     ),
   },
