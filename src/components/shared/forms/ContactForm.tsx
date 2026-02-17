@@ -51,7 +51,10 @@ export default function ContactForm({
     const text =
       `<b>Заявка "Форма зворотнього зв'язку"</b>\n` +
       `<b>Ім'я:</b> ${values.name.trim()}\n` +
-      `<b>Телефон:</b> ${values.phone.trim().replace(/(?!^)\D/g, "")}\n`;
+      `<b>Компанія:</b> ${values.company.trim() || "—"}\n` +
+      `<b>Телефон:</b> ${values.phone.trim().replace(/(?!^)\D/g, "")}\n` +
+      `<b>Email:</b> ${values.email.trim() || "—"}\n` +
+      `<b>Повідомлення:</b> ${values.message.trim() || "—"}\n`;
 
     try {
       setIsError(false);
