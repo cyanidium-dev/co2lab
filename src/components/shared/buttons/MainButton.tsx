@@ -1,5 +1,4 @@
 import ArrowIcon from "../icons/ArrowIcon";
-import LoaderIcon from "../icons/LoaderIcon";
 import { twMerge } from "tailwind-merge";
 
 interface MainButtonProps {
@@ -50,13 +49,7 @@ export default function MainButton({
           isBlack ? "bg-white text-black" : "bg-black text-white",
         )}
       >
-        {isLoading ? (
-          <LoaderIcon className="relative top-0 right-0 w-5 h-5" />
-        ) : (
-          <ArrowIcon
-            className="h-[14px] w-[17px] transition-transform duration-300 ease-in-out group-focus-visible:translate-x-[2px] group-focus-visible:-translate-y-[2px] xl:group-hover:translate-x-[2px] xl:group-hover:-translate-y-[2px]"
-          />
-        )}
+        <ArrowIcon className="h-[14px] w-[17px] transition-transform duration-300 ease-in-out group-focus-visible:translate-x-[2px] group-focus-visible:-translate-y-[2px] xl:group-hover:translate-x-[2px] xl:group-hover:-translate-y-[2px]" />
       </div>
     </button>
   );
