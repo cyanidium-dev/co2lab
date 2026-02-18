@@ -53,6 +53,7 @@ export default function SendMessageModal({
       <ContactForm
         setIsError={setIsError}
         setIsNotificationShown={setIsNotificationShown}
+        setIsModalShown={setIsModalShown}
         titleClassName="lg:text-[28px]"
         buttonClassName="sm:max-w-full sm:ml-0"
       />
