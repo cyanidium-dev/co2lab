@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import NotificationPopUp from "@/components/shared/notifications/NotificationPopUp";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
 import { Dispatch, SetStateAction, useState } from "react";
@@ -19,10 +20,41 @@ export default function SendMessageModal({
   const [isError, setIsError] = useState(false);
 
   return (
-    <Modal isModalShown={isModalShown} setIsModalShown={setIsModalShown}>
+    <Modal
+      isModalShown={isModalShown}
+      setIsModalShown={setIsModalShown}
+      className="px-7 py-8 lg:px-30 lg:py-12"
+    >
+      {/* Фонові картинки */}
+      <Image
+        src="/images/modals/bgTopMob.svg"
+        alt=""
+        width={29}
+        height={182}
+        aria-hidden
+        className="absolute left-0 top-0 z-0 pointer-events-none lg:hidden"
+      />
+      <Image
+        src="/images/modals/bgTopDesk.svg"
+        alt=""
+        width={143}
+        height={182}
+        aria-hidden
+        className="absolute left-0 top-0 z-0 pointer-events-none hidden lg:block"
+      />
+      <Image
+        src="/images/modals/bgBottomDesk.svg"
+        alt=""
+        width={187}
+        height={159}
+        aria-hidden
+        className="absolute right-3 top-[200px] z-0 pointer-events-none hidden lg:block"
+      />
       <ContactForm
         setIsError={setIsError}
         setIsNotificationShown={setIsNotificationShown}
+        titleClassName="lg:text-[28px]"
+        buttonClassName="sm:max-w-full sm:ml-0"
       />
       <NotificationPopUp
         title={isError ? "Something went wrong" : "Your message has been sent"}
