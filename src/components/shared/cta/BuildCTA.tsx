@@ -1,4 +1,4 @@
-import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
+import ContactUsApplication from "./ContactUsApplication";
 import Container from "@/components/shared/container/Container";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
 import Image from "next/image";
@@ -56,7 +56,7 @@ export default function BuildCTA() {
               Tell us about your needs — we’ll craft a CO₂ solution tailored to
               your operations.
             </p>
-            <SecondaryButton>Contact Us</SecondaryButton>
+            <ContactUsApplication />
           </div>
         </div>
       </Container>
