@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/header/Header";
 import Footer from "@/components/shared/footer/Footer";
+import { getBaseUrl } from "@/utils/createMetadata";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -13,10 +14,41 @@ const montserrat = Montserrat({
   fallback: ["Arial", "sans-serif"],
 });
 
+const baseUrl = getBaseUrl();
+const defaultTitle = "CO₂ Capture & Reuse Solutions for Industry | CO₂ Lab";
+const defaultDescription =
+  "Capture, purify, and reuse CO₂ at the source. Closing the carbon loop with efficient, scalable clean-tech solutions.";
+
 export const metadata: Metadata = {
-  title: "CO₂ Capture & Reuse Solutions for Industry | CO₂ Lab",
-  description:
-    "Capture, purify, and reuse CO₂ at the source. Closing the carbon loop with efficient, scalable clean-tech solutions.",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: defaultTitle,
+    template: "%s | CO₂ Lab",
+  },
+  description: defaultDescription,
+  openGraph: {
+    title: defaultTitle,
+    description: defaultDescription,
+    url: baseUrl,
+    siteName: "CO₂ Lab",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CO₂ Lab",
+        type: "image/jpeg",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [`${baseUrl}/opengraph-image.jpg`],
+  },
 };
 
 export default function RootLayout({

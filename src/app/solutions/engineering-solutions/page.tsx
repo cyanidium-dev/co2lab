@@ -4,6 +4,14 @@ import Technologies from "@/components/engineeringSolutionsPage/technologies/Tec
 import Monitoring from "@/components/engineeringSolutionsPage/monitoring/Monitoring";
 import DryIce from "@/components/engineeringSolutionsPage/dryIce/DryIce";
 import ConsultationCTA from "@/components/shared/cta/ConsultationCTA";
+import { createPageMetadata } from "@/utils/createMetadata";
+
+export const metadata = createPageMetadata({
+  title: "Engineering Solutions",
+  description:
+    "Complete CO₂ engineering solutions from capture to utilization. Technologies, processing, monitoring, and dry ice production.",
+  path: "/solutions/engineering-solutions",
+});
 
 export default function EngineeringSolutions() {
   return (
