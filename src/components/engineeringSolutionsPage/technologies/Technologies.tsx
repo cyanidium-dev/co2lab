@@ -98,7 +98,7 @@ export default function Technologies() {
                     src={item.image}
                     alt={item.imageAlt}
                     fill
-                    className="object-cover"
+                    className="object-cover xl:group-hover:scale-105 transition-transform duration-1500 ease-in-out will-change-transform"
                     sizes="(max-width: 1023px) 100vw, 38vw"
                   />
                 </div>
