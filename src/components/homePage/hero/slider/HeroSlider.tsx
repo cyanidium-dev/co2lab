@@ -86,9 +86,9 @@ export default function HeroSlider() {
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="max-w-[171px] mb-2 lg:mb-3 text-[14px] lg:text-[16px] font-medium uppercase leading-[120%] text-white">
+                <h2 className="max-w-[171px] mb-2 lg:mb-3 text-[14px] lg:text-[16px] font-medium uppercase leading-[120%] text-white">
                   {slide.title}
-                </h3>
+                </h2>
                 <p className="text-[10px] lg:text-[12px] font-light leading-[120%] text-white">
                   {slide.description}
                 </p>
@@ -112,9 +112,9 @@ export default function HeroSlider() {
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="max-w-[171px] mb-2 lg:mb-3 text-[14px] lg:text-[16px] font-medium uppercase leading-[120%] text-white">
+                <h2 className="max-w-[171px] mb-2 lg:mb-3 text-[14px] lg:text-[16px] font-medium uppercase leading-[120%] text-white">
                   {slide.title}
-                </h3>
+                </h2>
                 <p className="text-[10px] lg:text-[12px] font-light leading-[120%] text-white">
                   {slide.description}
                 </p>
