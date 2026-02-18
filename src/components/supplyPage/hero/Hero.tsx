@@ -1,7 +1,7 @@
-import MainButton from "@/components/shared/buttons/MainButton";
 import Container from "@/components/shared/container/Container";
 import PageTitle from "@/components/shared/titles/PageTitle";
 import Image from "next/image";
+import RequestDetailsApplication from "./RequestDetailsApplication";
 
 export default function Hero() {
   return (
@@ -24,12 +24,7 @@ export default function Hero() {
             distribution — we ensure stable volumes, certified quality, and
             long-term supply.
           </p>
-          <MainButton
-            variant="white"
-            className="xs:max-w-[288px] mx-auto lg:mx-0"
-          >
-            Request Supply Details
-          </MainButton>
+          <RequestDetailsApplication />
         </div>
       </Container>
     </section>
