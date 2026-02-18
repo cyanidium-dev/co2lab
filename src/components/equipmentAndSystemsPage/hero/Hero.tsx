@@ -1,4 +1,4 @@
-import MainButton from "@/components/shared/buttons/MainButton";
+import RequestQuoteApplication from "./RequestQuote";
 import Container from "@/components/shared/container/Container";
 import PageTitle from "@/components/shared/titles/PageTitle";
 import Image from "next/image";
@@ -29,12 +29,7 @@ export default function Hero() {
               Engineering solutions for CO₂ capture, purification, liquefaction,
               and storage— from modules to full-scale plants.
             </p>
-            <MainButton
-              variant="white"
-              className="xs:max-w-[304px] mx-auto md:mx-0"
-            >
-              Request a Quote
-            </MainButton>
+            <RequestQuoteApplication />
           </div>
         </div>
       </Container>
