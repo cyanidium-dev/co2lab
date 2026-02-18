@@ -2,6 +2,7 @@ import Container from "@/components/shared/container/Container";
 import PageTitle from "@/components/shared/titles/PageTitle";
 import Image from "next/image";
 import ContactDetails from "./ContactDetails";
+import heroImage from "../../../../public/images/contactsPage/hero/hero.webp";
 
 export default function Hero() {
   return (
@@ -35,11 +36,12 @@ export default function Hero() {
             aria-hidden
           />
           <Image
-            src="/images/contactsPage/hero/hero.webp"
+            src={heroImage}
             alt="hero image"
             fill
             priority
             fetchPriority="high"
+            placeholder="blur"
             className="object-cover rounded-[18px]"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />

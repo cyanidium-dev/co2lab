@@ -7,21 +7,25 @@ const cards = [
     description:
       "CO₂ Lab technologies support environmental initiatives by turning emissions into usable resources.",
     hasDescription: true,
+    alt: "Applications of CO₂ technologies in environmental projects",
   },
   {
     image: "/images/industriesWeServePage/recycling/imageTwo.webp",
     title: "CO₂ UTILIZATION IN RECYCLING PROCESSES",
     hasDescription: false,
+    alt: "Use of CO₂ in recycling and waste processing",
   },
   {
     image: "/images/industriesWeServePage/recycling/imageThree.webp",
     title: "ENVIRONMENTAL TREATMENT SYSTEMS",
     hasDescription: false,
+    alt: "Systems for treating and cleaning industrial emissions",
   },
   {
     image: "/images/industriesWeServePage/recycling/imageFour.webp",
     title: "NEUTRALIZATION AND RECOVERY SOLUTIONS",
     hasDescription: false,
+    alt: "Neutralization and recovery of CO₂ for reuse",
   },
 ];
 
@@ -36,7 +40,7 @@ export default function RecyclingList() {
           <div className="flex items-end relative min-h-[160px] lg:min-h-[224px] xl:min-h-[274px] rounded-[12px] border border-white overflow-hidden">
             <Image
               src={card.image}
-              alt={card.title}
+              alt={card.alt ?? card.title}
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 1200px"
