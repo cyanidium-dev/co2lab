@@ -3,6 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { heroSlides, HERO_SLIDE_DURATION_MS } from "@/constants/heroSlides";
+import slideOne from "../../../../../public/images/homePage/hero/slideOne.webp";
+import slideTwo from "../../../../../public/images/homePage/hero/slideTwo.webp";
+import slideThree from "../../../../../public/images/homePage/hero/slideThree.webp";
+import slideFour from "../../../../../public/images/homePage/hero/slideFour.webp";
+
+const slideImages = [slideOne, slideTwo, slideThree, slideFour] as const;
 
 const TOTAL = heroSlides.length;
 const TRANSITION_MS = 500;
@@ -71,16 +77,19 @@ export default function HeroSlider() {
               : "none",
           }}
         >
-          {heroSlides.map((slide) => (
+          {heroSlides.map((slide, idx) => (
             <div
               key={slide.id}
               className="flex w-[250px] shrink-0 items-center gap-2 rounded-[18px] p-2.5 shadow-[inset_0_4px_12.6px_0_rgba(255,255,255,0.25)] backdrop-blur-[10px] lg:w-[310px] lg:gap-3.5"
             >
               <div className="relative h-[77px] lg:h-[107px] w-[84px] lg:w-[98px] shrink-0 overflow-hidden rounded-[10px]">
                 <Image
-                  src={slide.image}
+                  src={slideImages[idx]}
                   alt=""
                   fill
+                  placeholder="blur"
+                  priority
+                  fetchPriority="high"
                   className="object-cover"
                   sizes="140px"
                 />
@@ -104,9 +113,10 @@ export default function HeroSlider() {
             >
               <div className="relative h-[77px] lg:h-[107px] w-[84px] lg:w-[98px] shrink-0 overflow-hidden rounded-[10px]">
                 <Image
-                  src={slide.image}
+                  src={slideImages[cloneIndex]}
                   alt=""
                   fill
+                  placeholder="blur"
                   className="object-cover"
                   sizes="140px"
                 />

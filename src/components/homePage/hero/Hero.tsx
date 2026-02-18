@@ -5,6 +5,7 @@ import Image from "next/image";
 import Badges from "./Badges";
 import Link from "next/link";
 import HeroSlider from "./slider/HeroSlider";
+import heroImage from "../../../../public/images/homePage/hero/hero.webp";
 
 export default function Hero() {
   return (
@@ -42,11 +43,12 @@ export default function Hero() {
             aria-hidden
           />
           <Image
-            src="/images/homePage/hero/hero.webp"
+            src={heroImage}
             alt=""
             fill
             priority
             fetchPriority="high"
+            placeholder="blur"
             className="object-cover rounded-[18px]"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
