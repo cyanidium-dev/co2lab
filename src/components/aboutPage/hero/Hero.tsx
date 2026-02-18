@@ -1,5 +1,5 @@
 import Container from "@/components/shared/container/Container";
-import MainButton from "@/components/shared/buttons/MainButton";
+import ContactUsApplication from "./ContactUsApplication";
 import PageTitle from "@/components/shared/titles/PageTitle";
 import Image from "next/image";
 import Badges from "./Badges";
@@ -18,9 +18,7 @@ export default function Hero() {
             worldwide.
           </p>
 
-          <MainButton className="sm:max-w-[288px] lg:mb-20">
-            Contact Us
-          </MainButton>
+          <ContactUsApplication />
 
           <Badges className="hidden lg:flex lg:max-w-[387px]" />
         </div>

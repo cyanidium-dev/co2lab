@@ -1,14 +1,9 @@
-"use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import Container from "@/components/shared/container/Container";
-import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
+import ContactApplication from "./ContactApplication";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
 
 export default function ContactUs() {
-  const router = useRouter();
-
   return (
     <section className="pt-12 pb-24 lg:pt-[136px] lg:pb-[76px]">
       <Container className="overflow-hidden rounded-[18px]">
@@ -51,12 +46,7 @@ export default function ContactUs() {
               production and environmental goals. Get advice and learn how to
               optimize your carbon cycle.
             </p>
-            <SecondaryButton
-              variant="white"
-              onClick={() => router.push("/contacts")}
-            >
-              Contact us
-            </SecondaryButton>
+            <ContactApplication />
           </div>
         </div>
       </Container>

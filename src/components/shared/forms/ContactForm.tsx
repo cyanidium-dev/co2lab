@@ -22,6 +22,8 @@ interface ContactFormProps {
   setIsNotificationShown: Dispatch<SetStateAction<boolean>>;
   setIsModalShown?: Dispatch<SetStateAction<boolean>>;
   className?: string;
+  titleClassName?: string;
+  buttonClassName?: string;
 }
 
 export default function ContactForm({
@@ -29,6 +31,8 @@ export default function ContactForm({
   setIsNotificationShown,
   setIsModalShown,
   className = "",
+  titleClassName = "",
+  buttonClassName = "",
 }: ContactFormProps) {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -86,7 +90,9 @@ export default function ContactForm({
 
   return (
     <div className={twMerge("", className)}>
-      <SectionTitle className="mb-8 lg:mb-8">Send us a message</SectionTitle>
+      <SectionTitle className={twMerge("mb-8 lg:mb-8", titleClassName)}>
+        Send us a message
+      </SectionTitle>
 
       <Formik
         initialValues={initialValues}
@@ -117,7 +123,7 @@ export default function ContactForm({
                 disabled={!(dirty && isValid) || isLoading}
                 isLoading={isLoading}
                 loadingText="Sending..."
-                className="w-full sm:max-w-[288px] ml-auto"
+                className={twMerge("w-full sm:max-w-[288px] ml-auto", buttonClassName)}
               >
                 Send Request
               </MainButton>

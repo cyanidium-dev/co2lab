@@ -1,4 +1,4 @@
-import MainButton from "@/components/shared/buttons/MainButton";
+import ExploreTechnologiesApplication from "./ExploreTechnologies";
 import Container from "@/components/shared/container/Container";
 import PageTitle from "@/components/shared/titles/PageTitle";
 import Image from "next/image";
@@ -22,12 +22,7 @@ export default function Hero() {
           <p className="mb-6 lg:mb-10 text-white text-center lg:text-left">
             From capture to utilization
           </p>
-          <MainButton
-            variant="white"
-            className="xs:max-w-[288px] mx-auto lg:mx-0"
-          >
-            Explore technologies
-          </MainButton>
+          <ExploreTechnologiesApplication />
         </div>
       </Container>
     </section>

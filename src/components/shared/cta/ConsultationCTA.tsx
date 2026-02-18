@@ -1,4 +1,4 @@
-import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
+import RequestConsultation from "./RequestConsultation";
 import Container from "@/components/shared/container/Container";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
 import Image from "next/image";
@@ -56,7 +56,7 @@ export default function ConsultationCTA() {
               Get a tailored solution for your production, purification or
               utilization needs.
             </p>
-            <SecondaryButton>Request consultation</SecondaryButton>
+            <RequestConsultation />
           </div>
         </div>
       </Container>
