@@ -2,6 +2,7 @@ import RequestQuoteApplication from "./RequestQuote";
 import Container from "@/components/shared/container/Container";
 import PageTitle from "@/components/shared/titles/PageTitle";
 import Image from "next/image";
+import heroImage from "../../../../public/images/equipmentAndSystemsPage/hero/hero.webp";
 
 export default function Hero() {
   return (
@@ -9,11 +10,12 @@ export default function Hero() {
       <Container>
         <div className="relative flex flex-col md:flex-row justify-center md:justify-between md:items-end px-3 lg:px-6.5 py-[130px] lg:pt-[416px] md:pb-6.5 rounded-[18px] overflow-hidden">
           <Image
-            src="/images/equipmentAndSystemsPage/hero/hero.webp"
+            src={heroImage}
             alt="Hero"
             fill
             priority
             fetchPriority="high"
+            placeholder="blur"
             className="object-cover -z-10"
           />
           <div className="mb-8 md:mb-0 md:max-w-[381px] lg:max-w-[541px]">
