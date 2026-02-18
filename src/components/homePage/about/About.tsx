@@ -37,8 +37,9 @@ export default function About() {
             carbon loop, we give new purpose to what was once waste — creating
             technologies that drive a sustainable future.
           </p>
-          <Link href="/about" aria-label="Read more about CO₂ Lab">
+          <Link href="/about">
             <SecondaryButton>Read more</SecondaryButton>
+            <span className="sr-only"> about CO₂ Lab</span>
           </Link>
         </div>
       </Container>
