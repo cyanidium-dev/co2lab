@@ -1,7 +1,7 @@
-import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 import Container from "@/components/shared/container/Container";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
 import Image from "next/image";
+import RequestSupportApplication from "./RequestSupport";
 
 export default function SupportCTA() {
   return (
@@ -39,7 +39,7 @@ export default function SupportCTA() {
               From concept to commissioning, we ensure your CO₂ facility is
               delivered efficiently and reliably.
             </p>
-            <SecondaryButton>Request Support</SecondaryButton>
+            <RequestSupportApplication />
           </div>
         </div>
       </Container>
