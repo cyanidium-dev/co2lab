@@ -5,6 +5,7 @@ import Image from "next/image";
 import imageOne from "../../../../public/images/industriesWeServePage/chemical/imageOne.webp";
 import imageTwo from "../../../../public/images/industriesWeServePage/chemical/imageTwo.webp";
 import imageThree from "../../../../public/images/industriesWeServePage/chemical/imageThree.webp";
+import Badges from "./Badges";
 
 const logisticsImages = [
   { src: imageOne, alt: "CO₂ storage and logistics infrastructure" },
@@ -32,8 +33,13 @@ export default function Chemical() {
           className="absolute -top-25 left-[418px] -z-10 object-cover object-right pointer-events-none hidden lg:block"
           aria-hidden
         />
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+          <h3 className="lg:max-w-[220px] xl:max-w-full text-[16px] lg:text-[24px] font-semibold leading-[120%] uppercase">
+            Value for the industry:
+          </h3>
+          <Badges />
+        </div>
         <div className="flex flex-col sm:flex-row sm:items-center gap-8">
-          {" "}
           <div className="sm:w-[calc(50%-16px)] xl:w-[46%]">
             <SectionTitle className="mb-3 lg:mb-4.5">
               <span className="block">Typical</span>
