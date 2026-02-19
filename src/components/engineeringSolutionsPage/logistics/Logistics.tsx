@@ -1,6 +1,7 @@
 import Container from "@/components/shared/container/Container";
 import ImageCarousel from "@/components/shared/carousel/ImageCarousel";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
+import Image from "next/image";
 import imageOne from "../../../../public/images/engineeringSolutionsPage/logistics/imageOne.webp";
 import imageTwo from "../../../../public/images/engineeringSolutionsPage/logistics/imageTwo.webp";
 import imageThree from "../../../../public/images/engineeringSolutionsPage/logistics/imageThree.webp";
@@ -14,7 +15,23 @@ const logisticsImages = [
 export default function Logistics() {
   return (
     <section className="py-12 lg:pt-30 lg:pb-0">
-      <Container className="flex flex-col sm:flex-row sm:items-center gap-8">
+      <Container className="relative flex flex-col sm:flex-row sm:items-center gap-8">
+        <Image
+          src="/images/engineeringSolutionsPage/logistics/bgMob.svg"
+          alt=""
+          width={158}
+          height={188}
+          className="absolute -top-16.5 -right-6 -z-10 object-cover object-right pointer-events-none lg:hidden"
+          aria-hidden
+        />
+        <Image
+          src="/images/engineeringSolutionsPage/logistics/bgDesk.svg"
+          alt=""
+          width={279}
+          height={333}
+          className="absolute -top-25 left-[418px] -z-10 object-cover object-right pointer-events-none hidden lg:block"
+          aria-hidden
+        />
         <div className="sm:w-[calc(50%-16px)] xl:w-[46%]">
           <SectionTitle className="mb-3 lg:mb-4.5">
             <span className="block">Storage &</span>
