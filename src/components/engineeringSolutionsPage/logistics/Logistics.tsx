@@ -18,7 +18,7 @@ export default function Logistics() {
       <Container className="relative flex flex-col sm:flex-row sm:items-center gap-8">
         <Image
           src="/images/engineeringSolutionsPage/logistics/bgMob.svg"
-          alt=""
+          alt="bg mobile"
           width={158}
           height={188}
           className="absolute -top-16.5 -right-6 -z-10 object-cover object-right pointer-events-none lg:hidden"
@@ -26,7 +26,7 @@ export default function Logistics() {
         />
         <Image
           src="/images/engineeringSolutionsPage/logistics/bgDesk.svg"
-          alt=""
+          alt="bg desktop"
           width={279}
           height={333}
           className="absolute -top-25 left-[418px] -z-10 object-cover object-right pointer-events-none hidden lg:block"

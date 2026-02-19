@@ -4,6 +4,7 @@ import Standards from "@/components/supplyPage/standards/Standards";
 import Distribution from "@/components/supplyPage/distribution/Distribution";
 import Benefits from "@/components/supplyPage/benefits/Benefits";
 import { createPageMetadata } from "@/utils/createMetadata";
+import Biogenic from "@/components/supplyPage/biogenic/Biogenic";
 
 export const metadata = createPageMetadata({
   title: "CO₂ Production and Supply",
@@ -16,6 +17,7 @@ export default function SupplyPage() {
   return (
     <>
       <Hero />
+      <Biogenic />
       <Benefits />
       <Standards />
       <Distribution />
