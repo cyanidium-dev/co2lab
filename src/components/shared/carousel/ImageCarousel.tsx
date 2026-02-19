@@ -35,13 +35,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   }));
 
   return (
-    <motion.div
-      initial={{ x: -100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={viewport}
-      transition={slideInTransition}
-      className="relative w-full min-w-0 flex-1 h-[193px] lg:h-[252px] overflow-hidden"
-    >
+    <div className="relative w-full min-w-0 flex-1 h-[193px] lg:h-[252px] overflow-hidden">
       <div className="carousel-card-stack w-full h-full min-h-[193px] lg:min-h-[252px]">
         {cards.map((card) => (
           <div
@@ -62,6 +56,6 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
