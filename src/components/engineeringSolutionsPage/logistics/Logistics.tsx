@@ -15,7 +15,7 @@ export default function Logistics() {
   return (
     <section className="py-12 lg:pt-30 lg:pb-0">
       <Container className="flex flex-col sm:flex-row sm:items-center gap-8">
-        <div className="sm:w-[calc(50%-16px)]">
+        <div className="sm:w-[calc(50%-16px)] xl:w-[46%]">
           <SectionTitle className="mb-3 lg:mb-4.5">
             <span className="block">Storage &</span>
             <span className="block pl-[113px] lg:pl-[186px]">Logistics</span>
