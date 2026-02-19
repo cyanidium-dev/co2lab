@@ -3,6 +3,7 @@ import Comparison from "@/components/equipmentAndSystemsPage/comparison/Comparis
 import CriogenicTanks from "@/components/equipmentAndSystemsPage/criogenicTanks/CriogenicTanks";
 import SupportCTA from "@/components/shared/cta/SupportCTA";
 import { createPageMetadata } from "@/utils/createMetadata";
+import Modular from "@/components/equipmentAndSystemsPage/modular/Modular";
 
 export const metadata = createPageMetadata({
   title: "Equipment & Modular CO₂ Systems",
@@ -15,6 +16,7 @@ export default function EquipmentAndSystems() {
   return (
     <>
       <Hero />
+      <Modular />
       <Comparison />
       <CriogenicTanks />
       <SupportCTA />
