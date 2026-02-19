@@ -5,6 +5,7 @@ import Biogas from "@/components/industriesWeServePage/biogas/Biogas";
 import Logistics from "@/components/industriesWeServePage/logistics/Logistics";
 import Recycling from "@/components/industriesWeServePage/recycling/Recycling";
 import { createPageMetadata } from "@/utils/createMetadata";
+import Chemical from "@/components/industriesWeServePage/chemical/Chemical";
 
 export const metadata = createPageMetadata({
   title: "Industries We Serve",
@@ -19,6 +20,7 @@ export default function IndustriesWeServe() {
       <Hero />
       <Food />
       <Biogas />
+      <Chemical />
       <Logistics />
       <Recycling />
       <SupportCTA />
