@@ -15,7 +15,7 @@ export default function CriogenicTanks() {
             <p className="mb-3 lg:mb-4.5">
               CO2 Lab Engineering Bureau offers a wide range of cryogenic
               equipment for the storage and transportation of liquefied gases
-              such as CO₂, oxygen (LOX), nitrogen (LIN), argon (LAr), natural
+              such as CO₂, oxygen (LOX), nitrogen (LIN), argon (LAR), natural
               gas (LNG), and other industrial gases.
             </p>
             <p>
