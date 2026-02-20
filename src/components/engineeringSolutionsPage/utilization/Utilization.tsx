@@ -33,7 +33,7 @@ export default function Utilization() {
             friendly production solutions.
           </p>
         </div>
-        <ImageCarousel images={logisticsImages} />
+        <ImageCarousel images={logisticsImages} variant="left" />
       </Container>
     </section>
   );

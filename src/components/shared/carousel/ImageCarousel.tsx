@@ -20,6 +20,7 @@ const slotClasses = [
 
 type ImageCarouselProps = {
   images: CarouselImage[];
+  variant?: "left" | "right";
 };
 
 function getCardClass(idx: number, activeIndex: number, total: number): string {
@@ -27,7 +28,10 @@ function getCardClass(idx: number, activeIndex: number, total: number): string {
   return slot < 3 ? slotClasses[slot] : "carousel-backstack-card";
 }
 
-export default function ImageCarousel({ images }: ImageCarouselProps) {
+export default function ImageCarousel({
+  images,
+  variant = "right",
+}: ImageCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const N = images.length;
   const isExtended = N > 3;
@@ -54,7 +58,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   return (
     <div className="relative w-full min-w-0 flex-1 h-[193px] lg:h-[252px] overflow-hidden">
       <div
-        className={`carousel-card-stack w-full h-full min-h-[193px] lg:min-h-[252px] ${isExtended ? "carousel-extended" : ""}`}
+        className={`carousel-card-stack w-full h-full min-h-[193px] lg:min-h-[252px] ${isExtended ? "carousel-extended" : ""} ${variant === "left" ? "carousel-variant-left" : ""}`}
       >
         {cards.map((card, idx) => (
           <div
