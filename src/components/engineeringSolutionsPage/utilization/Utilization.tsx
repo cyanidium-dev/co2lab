@@ -7,12 +7,12 @@ import imageThree from "../../../../public/images/engineeringSolutionsPage/utili
 import imageFour from "../../../../public/images/engineeringSolutionsPage/utilization/imageFour.webp";
 import imageFive from "../../../../public/images/engineeringSolutionsPage/utilization/imageFive.webp";
 
-const logisticsImages = [
-  { src: imageOne, alt: "CO₂ storage tanks and cryogenic equipment" },
-  { src: imageTwo, alt: "Dry ice production and logistics facility" },
-  { src: imageThree, alt: "Industrial CO₂ distribution systems" },
-  { src: imageFour, alt: "Cold chain storage and transportation" },
-  { src: imageFive, alt: "CO₂ supply and logistics infrastructure" },
+const utilizationImages = [
+  { src: imageOne, alt: "CO₂ utilization in food and beverage industry" },
+  { src: imageTwo, alt: "CO₂ for greenhouse and agricultural applications" },
+  { src: imageThree, alt: "CO₂ in metal welding and precision manufacturing" },
+  { src: imageFour, alt: "CO₂ cooling and process control systems" },
+  { src: imageFive, alt: "CO₂ neutralization for sustainable production" },
 ];
 
 export default function Utilization() {
@@ -32,7 +32,7 @@ export default function Utilization() {
             friendly production solutions.
           </p>
         </div>
-        <ImageCarousel images={logisticsImages} variant="left" />
+        <ImageCarousel images={utilizationImages} variant="left" />
       </Container>
     </section>
   );
