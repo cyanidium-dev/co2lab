@@ -25,10 +25,10 @@ export default function WhyChoose() {
         <div className="md:w-[calc(50%-10px)]">
           <SectionTitle className="mb-3 lg:mb-4.5">
             <span className="block">Why Choose</span>
-            <span className="block pl-[150px] lg:pl-[250px]">CO₂ Lab</span>
+            <span className="block pl-[150px] lg:pl-[250px]">CO2Lab</span>
           </SectionTitle>
           <p>
-            CO₂ Lab stands out by combining deep technological knowledge with
+            CO2 Lab stands out by combining deep technological knowledge with
             practical, reliable delivery across industries. Whether it’s
             production, logistics, or tailored CO₂ applications, our team
             ensures performance and partnership.
@@ -37,7 +37,7 @@ export default function WhyChoose() {
         <div className="relative rounded-[18px] md:w-[calc(50%-10px)] h-[158px] xs:h-[248px] md:h-auto md:min-h-[208px] lg:min-h-[281px] overflow-hidden">
           <Image
             src="/images/aboutPage/whyChoose/whyChoose.webp"
-            alt="Why Choose CO₂ Lab"
+            alt="Why Choose CO2 Lab"
             fill
             className="object-cover object-[50%_70%]"
           />
