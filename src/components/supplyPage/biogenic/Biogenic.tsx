@@ -5,11 +5,15 @@ import Image from "next/image";
 import imageOne from "../../../../public/images/supplyPage/biogenic/imageOne.webp";
 import imageTwo from "../../../../public/images/supplyPage/biogenic/imageTwo.webp";
 import imageThree from "../../../../public/images/supplyPage/biogenic/imageThree.webp";
+import imageFour from "../../../../public/images/supplyPage/biogenic/ImageFour.webp";
+import imageFive from "../../../../public/images/supplyPage/biogenic/imageFive.webp";
 
-const logisticsImages = [
-  { src: imageOne, alt: "CO₂ storage and logistics infrastructure" },
-  { src: imageTwo, alt: "Industrial cylinders and dry ice equipment" },
-  { src: imageThree, alt: "Cold chain and distribution systems" },
+const biogenicImages = [
+  { src: imageOne, alt: "Biogenic CO₂ capture at biogas plant" },
+  { src: imageTwo, alt: "CO₂ liquefaction and processing equipment" },
+  { src: imageThree, alt: "Biomethane plant CO₂ capture system" },
+  { src: imageFour, alt: "Industrial biogenic CO₂ production" },
+  { src: imageFive, alt: "Biogas-to-CO₂ conversion infrastructure" },
 ];
 
 export default function Biogenic() {
@@ -45,7 +49,7 @@ export default function Biogenic() {
             resource.
           </p>
         </div>
-        <ImageCarousel images={logisticsImages} />
+        <ImageCarousel images={biogenicImages} />
       </Container>
     </section>
   );

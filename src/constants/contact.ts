@@ -11,6 +11,6 @@ export const SOCIAL_LINK_YOUTUBE = "https://youtube.com";
 export const contacts = {
   phone: CONTACT_PHONE,
   email: CONTACT_EMAIL_REQUEST.toUpperCase(),
-  address: "KYIV CITY, UKRAINE, 01234",
+  address: "KYIV CITY, UKRAINE, 04213",
   addressLink: "",
 } as const;
