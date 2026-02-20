@@ -5,11 +5,15 @@ import Image from "next/image";
 import imageOne from "../../../../public/images/equipmentAndSystemsPage/modular/imageOne.webp";
 import imageTwo from "../../../../public/images/equipmentAndSystemsPage/modular/imageTwo.webp";
 import imageThree from "../../../../public/images/equipmentAndSystemsPage/modular/imageThree.webp";
+import imageFour from "../../../../public/images/equipmentAndSystemsPage/modular/imageFour.webp";
+import imageFive from "../../../../public/images/equipmentAndSystemsPage/modular/imageFive.webp";
 
-const logisticsImages = [
-  { src: imageOne, alt: "CO₂ storage and logistics infrastructure" },
-  { src: imageTwo, alt: "Industrial cylinders and dry ice equipment" },
-  { src: imageThree, alt: "Cold chain and distribution systems" },
+const modularImages = [
+  { src: imageOne, alt: "Modular CO₂ plant skid and equipment" },
+  { src: imageTwo, alt: "Pre-assembled modular CO₂ processing unit" },
+  { src: imageThree, alt: "Modular CO₂ system piping and controls" },
+  { src: imageFour, alt: "Containerized CO₂ module installation" },
+  { src: imageFive, alt: "Modular CO₂ plant control and integration" },
 ];
 
 export default function Modular() {
@@ -43,7 +47,7 @@ export default function Modular() {
             and ready to run within a few days.
           </p>
         </div>
-        <ImageCarousel images={logisticsImages} />
+        <ImageCarousel images={modularImages} />
       </Container>
     </section>
   );
