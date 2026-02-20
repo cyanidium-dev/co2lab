@@ -5,11 +5,17 @@ import Image from "next/image";
 import imageOne from "../../../../public/images/equipmentAndSystemsPage/engineering/imageOne.webp";
 import imageTwo from "../../../../public/images/equipmentAndSystemsPage/engineering/imageTwo.webp";
 import imageThree from "../../../../public/images/equipmentAndSystemsPage/engineering/imageThree.webp";
+import imageFour from "../../../../public/images/equipmentAndSystemsPage/engineering/imageFour.webp";
+import imageFive from "../../../../public/images/equipmentAndSystemsPage/engineering/ImageFive.webp";
+import imageSix from "../../../../public/images/equipmentAndSystemsPage/engineering/imageSix.webp";
 
-const logisticsImages = [
-  { src: imageOne, alt: "CO₂ storage and logistics infrastructure" },
-  { src: imageTwo, alt: "Industrial cylinders and dry ice equipment" },
-  { src: imageThree, alt: "Cold chain and distribution systems" },
+const engineeringImages = [
+  { src: imageOne, alt: "CO₂ engineering and EPC project design" },
+  { src: imageTwo, alt: "CO₂ technology installation and commissioning" },
+  { src: imageThree, alt: "Engineering support for CO₂ systems" },
+  { src: imageFour, alt: "EPC project delivery and coordination" },
+  { src: imageFive, alt: "CO₂ plant engineering and integration" },
+  { src: imageSix, alt: "Full-scope CO₂ project engineering" },
 ];
 
 export default function Engineering() {
@@ -44,7 +50,7 @@ export default function Engineering() {
             technologies, enabling seamless project delivery at every stage.
           </p>
         </div>
-        <ImageCarousel images={logisticsImages} />
+        <ImageCarousel images={engineeringImages} />
       </Container>
     </section>
   );
