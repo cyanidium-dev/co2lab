@@ -1,12 +1,11 @@
 import Container from "@/components/shared/container/Container";
 import ImageCarousel from "@/components/shared/carousel/ImageCarousel";
 import SectionTitle from "@/components/shared/titles/SectionTitle";
-import Image from "next/image";
-import imageOne from "../../../../public/images/engineeringSolutionsPage/logistics/imageOne.webp";
-import imageTwo from "../../../../public/images/engineeringSolutionsPage/logistics/imageTwo.webp";
-import imageThree from "../../../../public/images/engineeringSolutionsPage/logistics/imageThree.webp";
-import imageFour from "../../../../public/images/engineeringSolutionsPage/logistics/imageFour.webp";
-import imageFive from "../../../../public/images/engineeringSolutionsPage/logistics/imageFive.webp";
+import imageOne from "../../../../public/images/engineeringSolutionsPage/utilization/imageOne.webp";
+import imageTwo from "../../../../public/images/engineeringSolutionsPage/utilization/imageTwo.webp";
+import imageThree from "../../../../public/images/engineeringSolutionsPage/utilization/imageThree.webp";
+import imageFour from "../../../../public/images/engineeringSolutionsPage/utilization/imageFour.webp";
+import imageFive from "../../../../public/images/engineeringSolutionsPage/utilization/imageFive.webp";
 
 const logisticsImages = [
   { src: imageOne, alt: "CO₂ storage tanks and cryogenic equipment" },
