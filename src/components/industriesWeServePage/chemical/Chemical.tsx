@@ -19,10 +19,10 @@ const slideFromLeft = { opacity: 0, x: -36 };
 const slideFromRight = { opacity: 0, x: 36 };
 const slideEnd = { opacity: 1, x: 0 };
 
-const logisticsImages = [
-  { src: imageOne, alt: "CO₂ storage and logistics infrastructure" },
-  { src: imageTwo, alt: "Industrial cylinders and dry ice equipment" },
-  { src: imageThree, alt: "Cold chain and distribution systems" },
+const applicationsImages = [
+  { src: imageOne, alt: "High-purity CO₂ for chemical processes" },
+  { src: imageTwo, alt: "Pharmaceutical-grade CO₂ applications" },
+  { src: imageThree, alt: "Industrial chemical CO₂ process control" },
 ];
 
 export default function Chemical() {
@@ -107,7 +107,7 @@ export default function Chemical() {
               and process stability.
             </p>
           </div>
-          <ImageCarousel images={logisticsImages} />
+          <ImageCarousel images={applicationsImages} />
         </div>
       </Container>
     </section>
