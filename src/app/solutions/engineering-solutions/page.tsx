@@ -6,6 +6,7 @@ import DryIce from "@/components/engineeringSolutionsPage/dryIce/DryIce";
 import ConsultationCTA from "@/components/shared/cta/ConsultationCTA";
 import { createPageMetadata } from "@/utils/createMetadata";
 import Logistics from "@/components/engineeringSolutionsPage/logistics/Logistics";
+import Utilization from "@/components/engineeringSolutionsPage/utilization/Utilization";
 
 export const metadata = createPageMetadata({
   title: "Engineering Solutions",
@@ -23,6 +24,7 @@ export default function EngineeringSolutions() {
       <Monitoring />
       <Logistics />
       <DryIce />
+      <Utilization />
       <ConsultationCTA />
     </>
   );
