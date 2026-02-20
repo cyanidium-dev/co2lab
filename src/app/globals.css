@@ -201,6 +201,19 @@
       infinite;
   }
 
+  /* Extended layout (N > 3): static, no animation; backstack = same size as center, under it */
+  .carousel-extended .carousel-right-card,
+  .carousel-extended .carousel-center-card,
+  .carousel-extended .carousel-left-card {
+    animation: none;
+  }
+
+  .carousel-backstack-card {
+    height: 172px;
+    transform: translate(-7px, -50%);
+    z-index: 5;
+  }
+
   @media (min-width: 1024px) {
     .carousel-right-card {
       height: 252px;
@@ -220,6 +233,11 @@
       height: 181px;
       animation: carouselMoveToMiddleDesktop 10s
         cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+    }
+
+    .carousel-backstack-card {
+      height: 224px;
+      transform: translate(-14px, -50%);
     }
   }
 
