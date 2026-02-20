@@ -5,11 +5,15 @@ import Image from "next/image";
 import imageOne from "../../../../public/images/engineeringSolutionsPage/logistics/imageOne.webp";
 import imageTwo from "../../../../public/images/engineeringSolutionsPage/logistics/imageTwo.webp";
 import imageThree from "../../../../public/images/engineeringSolutionsPage/logistics/imageThree.webp";
+import imageFour from "../../../../public/images/engineeringSolutionsPage/logistics/imageFour.webp";
+import imageFive from "../../../../public/images/engineeringSolutionsPage/logistics/imageFive.webp";
 
 const logisticsImages = [
-  { src: imageOne, alt: "CO₂ storage and logistics infrastructure" },
-  { src: imageTwo, alt: "Industrial cylinders and dry ice equipment" },
-  { src: imageThree, alt: "Cold chain and distribution systems" },
+  { src: imageOne, alt: "CO₂ storage tanks and cryogenic equipment" },
+  { src: imageTwo, alt: "Dry ice production and logistics facility" },
+  { src: imageThree, alt: "Industrial CO₂ distribution systems" },
+  { src: imageFour, alt: "Cold chain storage and transportation" },
+  { src: imageFive, alt: "CO₂ supply and logistics infrastructure" },
 ];
 
 export default function Logistics() {
