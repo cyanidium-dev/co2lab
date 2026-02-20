@@ -33,7 +33,7 @@ export default function About() {
             CO2LAB
           </SectionTitle>
           <p className="sm:max-w-[431px] mb-8 text-[12px] lg:text-[16px] font-light leading-[120%]">
-            At CO₂ Lab, we transform emissions into innovation. By closing the
+            At CO2 Lab, we transform emissions into innovation. By closing the
             carbon loop, we give new purpose to what was once waste — creating
             technologies that drive a sustainable future.
           </p>

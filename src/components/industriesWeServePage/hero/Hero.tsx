@@ -21,7 +21,7 @@ export default function Hero() {
             Industries We Serve
           </PageTitle>
           <p className="max-w-[598px] mx-auto lg:mx-0 text-white text-center lg:text-left">
-            CO₂ Lab delivers tailored CO₂ solutions across multiple industries —
+            CO2 Lab delivers tailored CO₂ solutions across multiple industries —
             helping businesses optimize processes, ensure quality, and meet
             sustainability goals.
           </p>

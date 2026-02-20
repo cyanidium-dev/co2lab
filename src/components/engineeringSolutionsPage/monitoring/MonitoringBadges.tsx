@@ -1,7 +1,7 @@
 import Badge from "@/components/shared/badge/Badge";
 
 const topBadge = "FSSC 22000";
-const rowBadges = ["ISBT", "AIGA", "FDA"] as const;
+const rowBadges = ["ISBT", "EIGA", "FDA"] as const;
 
 export default function MonitoringBadges() {
   return (

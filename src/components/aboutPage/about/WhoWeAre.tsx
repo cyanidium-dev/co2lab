@@ -25,7 +25,7 @@ export default function WhoWeAre() {
         <div className="md:w-[calc(50%-10px)]">
           <SectionTitle className="mb-3 lg:mb-4.5">Who We Are?</SectionTitle>
           <p>
-            CO₂ Lab is a technology-driven company focused on developing and
+            CO2 Lab is a technology-driven company focused on developing and
             delivering comprehensive CO₂ solutions for a range of industries. We
             combine engineering expertise with operational reliability to
             support businesses in optimizing gas usage, maintaining quality, and
