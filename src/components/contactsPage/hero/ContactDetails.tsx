@@ -12,8 +12,8 @@ import { twMerge } from "tailwind-merge";
 
 const socialLinks = [
   { name: "Instagram", href: SOCIAL_LINK_INSTAGRAM, Icon: InstagramIcon },
-  { name: "LinkedIn", href: SOCIAL_LINK_LINKEDIN, Icon: LinkedInIcon },
-  { name: "YouTube", href: SOCIAL_LINK_YOUTUBE, Icon: YouTubeIcon },
+  //   { name: "LinkedIn", href: SOCIAL_LINK_LINKEDIN, Icon: LinkedInIcon },
+  //   { name: "YouTube", href: SOCIAL_LINK_YOUTUBE, Icon: YouTubeIcon },
 ];
 
 type ContactDetailsProps = {
@@ -64,7 +64,7 @@ export default function ContactDetails({
             <span
               className={`flex h-8 w-8 lg:w-[43px] lg:h-[43px] shrink-0 items-center justify-center rounded-full ${item.name === "YouTube" ? "bg-black text-white" : "bg-white text-black"}`}
             >
-              <item.Icon />
+              <item.Icon className="w-6 h-auto" />
             </span>
           </a>
         ))}
