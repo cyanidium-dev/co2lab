@@ -1,4 +1,4 @@
-import { ICELAB_LINK, SOCIAL_LINK_INSTAGRAM } from "@/constants/contact";
+import { ICELAB_LINK, SOCIAL_LINK_INSTAGRAM_ICELAB } from "@/constants/contact";
 import LogoLink from "../logoLink/LogoLink";
 import IceLabIcon from "../icons/IceLabIcon";
 import InstagramIcon from "../icons/InstagramIcon";
@@ -18,7 +18,7 @@ export default function LogoBlock() {
           <IceLabIcon className="w-8 lg:w10 h-auto" />
         </a>
         <a
-          href={SOCIAL_LINK_INSTAGRAM}
+          href={SOCIAL_LINK_INSTAGRAM_ICELAB}
           target="_blank"
           rel="noopener noreferrer"
           className="xl:hover:opacity-80 focus-visible:opacity-80 transition-opacity duration-300 ease-in-out outline-none"

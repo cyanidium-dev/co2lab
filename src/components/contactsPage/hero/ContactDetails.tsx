@@ -1,7 +1,7 @@
 import {
   CONTACT_EMAIL_REQUEST,
   CONTACT_PHONE,
-  SOCIAL_LINK_INSTAGRAM,
+  SOCIAL_LINK_INSTAGRAM_CO2LAB,
   SOCIAL_LINK_LINKEDIN,
   SOCIAL_LINK_YOUTUBE,
 } from "@/constants/contact";
@@ -11,7 +11,11 @@ import YouTubeIcon from "@/components/shared/icons/YouTubeIcon";
 import { twMerge } from "tailwind-merge";
 
 const socialLinks = [
-  { name: "Instagram", href: SOCIAL_LINK_INSTAGRAM, Icon: InstagramIcon },
+  {
+    name: "Instagram",
+    href: SOCIAL_LINK_INSTAGRAM_CO2LAB,
+    Icon: InstagramIcon,
+  },
   //   { name: "LinkedIn", href: SOCIAL_LINK_LINKEDIN, Icon: LinkedInIcon },
   //   { name: "YouTube", href: SOCIAL_LINK_YOUTUBE, Icon: YouTubeIcon },
 ];
