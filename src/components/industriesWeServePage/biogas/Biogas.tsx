@@ -17,7 +17,7 @@ export default function Biogas() {
                   renewable sources.
                 </p>
                 <p>
-                  CO2 Lab supports renewable energy facilities by capturing and
+                  CO2Lab supports renewable energy facilities by capturing and
                   upgrading biogenic CO₂ into valuable products.
                 </p>
               </div>

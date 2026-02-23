@@ -10,10 +10,10 @@ export default function CriogenicTanks() {
         <div className="flex flex-col sm:flex-row-reverse sm:items-center gap-8 mb-8 lg:mb-12">
           <div className="sm:w-[calc(50%-16px)]">
             <SectionTitle className="mb-3 lg:mb-4.5 lg:text-[44px] xl:text-[48px]">
-              Cryogenic Tanks and Equipment from CO2 Lab
+              Cryogenic Tanks and Equipment from CO2Lab
             </SectionTitle>
             <p className="mb-3 lg:mb-4.5">
-              CO2 Lab Engineering Bureau offers a wide range of cryogenic
+              CO2Lab Engineering Bureau offers a wide range of cryogenic
               equipment for the storage and transportation of liquefied gases
               such as CO₂, oxygen (LOX), nitrogen (LIN), argon (LAR), natural
               gas (LNG), and other industrial gases.

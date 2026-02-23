@@ -15,7 +15,7 @@ const montserrat = Montserrat({
 });
 
 const baseUrl = getBaseUrl();
-const defaultTitle = "CO₂ Capture & Reuse Solutions for Industry | CO₂ Lab";
+const defaultTitle = "CO₂ Capture & Reuse Solutions for Industry | CO2Lab";
 const defaultDescription =
   "Capture, purify, and reuse CO₂ at the source. Closing the carbon loop with efficient, scalable clean-tech solutions.";
 
