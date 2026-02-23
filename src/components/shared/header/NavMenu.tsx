@@ -40,18 +40,26 @@ export default function NavMenu() {
     });
   }, [pillActiveIndex]);
 
+  // Перше оновлення + ретраї для надійного показу при завантаженні
   useEffect(() => {
-    updatePill();
+    const run = () => updatePill();
+    run();
     const nav = navRef.current;
-    if (!nav) return;
-    const ro = new ResizeObserver(updatePill);
-    ro.observe(nav);
-    const raf = requestAnimationFrame(() => {
-      requestAnimationFrame(updatePill);
-    });
+    const ro = nav ? new ResizeObserver(run) : null;
+    if (nav) ro?.observe(nav);
+    const t1 = setTimeout(run, 50);
+    const t2 = setTimeout(run, 150);
+    const t3 = setTimeout(run, 400);
+    const onLoad = () => run();
+    window.addEventListener("load", onLoad);
+    const t4 = setTimeout(run, 500);
     return () => {
-      cancelAnimationFrame(raf);
-      ro.disconnect();
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+      window.removeEventListener("load", onLoad);
+      ro?.disconnect();
     };
   }, [pillActiveIndex, updatePill]);
 
