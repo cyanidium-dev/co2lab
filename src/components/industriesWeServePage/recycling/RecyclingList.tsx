@@ -5,7 +5,7 @@ const cards = [
     image: "/images/industriesWeServePage/recycling/imageOne.webp",
     title: "TYPICAL APPLICATIONS:",
     description:
-      "CO2 Lab technologies support environmental initiatives by turning emissions into usable resources.",
+      "CO2Lab technologies support environmental initiatives by turning emissions into usable resources.",
     hasDescription: true,
     alt: "Applications of CO₂ technologies in environmental projects",
   },

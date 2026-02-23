@@ -11,10 +11,10 @@ export default function Hero() {
       <Container className="flex flex-col gap-4 lg:flex-row lg:gap-8">
         <div className="lg:w-[calc(50%-16px)] lg:pt-[151px] lg:pb-10">
           <PageTitle className="mb-3 lg:mb-5.5 max-w-40 lg:max-w-[302px]">
-            About CO2 Lab
+            About CO2Lab
           </PageTitle>
           <p className="mb-4 lg:mb-10">
-            CO2 Lab delivers end-to-end CO₂ technologies — from capture and
+            CO2Lab delivers end-to-end CO₂ technologies — from capture and
             purification to supply and logistics — for industrial partners
             worldwide.
           </p>

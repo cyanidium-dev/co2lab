@@ -13,7 +13,7 @@ export default function Hero() {
             Contacts
           </PageTitle>
           <p className="mb-4 lg:mb-[85px]">
-            Get in touch with CO2 Lab to discuss your project, supply needs, or
+            Get in touch with CO2Lab to discuss your project, supply needs, or
             technical requirements.
           </p>
           <ContactDetails className="hidden lg:block" />

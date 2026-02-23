@@ -4,7 +4,10 @@ export const CONTACT_PHONE = "+38 (099) 669 82 91";
 
 export const ICELAB_LINK = "https://www.icelab.com.ua/";
 
-export const SOCIAL_LINK_INSTAGRAM = "https://www.instagram.com/co2labua";
+export const SOCIAL_LINK_INSTAGRAM_CO2LAB =
+  "https://www.instagram.com/co2labua?igsh=MTV1NDRpNWF6N216MA%3D%3D&utm_source=qr";
+export const SOCIAL_LINK_INSTAGRAM_ICELAB =
+  "https://www.instagram.com/icelabua?igsh=bWVrcWMyZXR1NnU5&utm_source=qr";
 export const SOCIAL_LINK_LINKEDIN = "https://linkedin.com";
 export const SOCIAL_LINK_YOUTUBE = "https://youtube.com";
 

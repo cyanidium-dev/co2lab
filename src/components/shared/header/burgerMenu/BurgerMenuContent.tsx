@@ -23,7 +23,7 @@ export default function BurgerMenuContent({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="md:hidden fixed right-0 top-0 z-40 pt-[71px] w-full h-dvh max-h-dvh bg-white overflow-hidden"
+          className="md:hidden fixed right-0 top-0 z-40 pt-[71px] w-full h-dvh max-h-dvh bg-white overflow-hidden no-doc-scroll"
           initial="hidden"
           animate="visible"
           exit="exit"
